@@ -33,8 +33,8 @@ export default function FavoritesPage() {
       {/* HEADER BANNER */}
       <div className="bg-white border-b border-slate-200 py-12 px-4 shadow-sm text-center">
         <div className="max-w-4xl mx-auto space-y-2">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-xs font-bold text-red-600 uppercase tracking-widest">
-            <Sparkles className="w-4 h-4 text-red-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-xs font-bold text-red-500 uppercase tracking-widest">
+            <Sparkles className="w-4 h-4 text-red-500" />
             <span>Saved Rentals</span>
           </div>
           <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
@@ -55,7 +55,7 @@ export default function FavoritesPage() {
           </div>
         ) : favorites.length === 0 ? (
           <div className="bg-white p-12 rounded-3xl text-center border border-slate-200 shadow-sm my-8">
-            <Heart className="w-12 h-12 text-red-600 mx-auto mb-4" />
+            <Heart className="w-12 h-12 text-red-500 mx-auto mb-4" />
             <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">No Saved Properties</h3>
             <p className="text-xs text-slate-500 max-w-sm mx-auto">
               Click the heart icon on any rental card to save it to your wishlist.

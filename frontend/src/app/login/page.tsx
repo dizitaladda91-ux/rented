@@ -147,7 +147,7 @@ function LoginForm() {
           <div className="text-center space-y-2">
             <div className="w-12 h-12 rounded-xl bosa-gradient-bg p-0.5 mx-auto mb-3 flex items-center justify-center shadow-md">
               <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
-                <Building2 className="w-6 h-6 text-red-600" />
+                <Building2 className="w-6 h-6 text-red-500" />
               </div>
             </div>
             <h1 className="font-heading text-2xl font-bold text-slate-900">
@@ -161,7 +161,7 @@ function LoginForm() {
           {/* Redirect Notice Banner if arriving from protected route */}
           {redirectUrl && (
             <div className="p-3.5 rounded-2xl bg-red-50 border border-red-200 text-red-900 text-xs flex items-start gap-2.5">
-              <ShieldAlert className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+              <ShieldAlert className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
               <div>
                 <span className="font-bold block">Security Clearance Required</span>
                 <span className="text-[11px] text-red-800">
@@ -188,7 +188,7 @@ function LoginForm() {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="Aman Sharma"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-600"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-500"
                   />
                 </div>
                 <div>
@@ -198,7 +198,7 @@ function LoginForm() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="+91 98765 43210"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-600"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-500"
                   />
                 </div>
                 <div>
@@ -238,7 +238,7 @@ function LoginForm() {
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
                       placeholder="e.g. Delhi, Gurgaon"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-3 text-slate-900 focus:outline-none focus:border-red-600"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-3 text-slate-900 focus:outline-none focus:border-red-500"
                     />
                   </div>
                 </div>
@@ -246,7 +246,7 @@ function LoginForm() {
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <label className="text-slate-800 font-bold">PIN Code (Postal Area)</label>
-                    <span className="text-[10px] text-red-600 font-bold">For Nearby Rentals</span>
+                    <span className="text-[10px] text-red-500 font-bold">For Nearby Rentals</span>
                   </div>
                   <input
                     type="text"
@@ -255,7 +255,7 @@ function LoginForm() {
                     value={pincode}
                     onChange={(e) => setPincode(e.target.value)}
                     placeholder="e.g. 110074"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-600 font-mono font-bold"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-500 font-mono font-bold"
                   />
                   <span className="text-[10px] text-slate-500 block mt-1">
                     We use your PIN code to show verified rentals in your vicinity.
@@ -272,7 +272,7 @@ function LoginForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="admin@rented.in"
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-600"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-500"
               />
             </div>
 
@@ -284,7 +284,7 @@ function LoginForm() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-600"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-500"
               />
             </div>
 
@@ -314,7 +314,7 @@ function LoginForm() {
               <button
                 type="button"
                 onClick={() => handleFillDemo("seller")}
-                className="px-2 py-1.5 rounded-lg bg-red-600 text-white font-bold hover:bg-red-700 transition-all text-center shadow-sm"
+                className="px-2 py-1.5 rounded-lg bg-red-500 text-white font-bold hover:bg-red-600 transition-all text-center shadow-sm"
               >
                 🏠 Landlord ID
               </button>
@@ -332,7 +332,7 @@ function LoginForm() {
             <button
               type="button"
               onClick={() => setIsRegister(!isRegister)}
-              className="text-xs text-red-600 font-bold hover:underline"
+              className="text-xs text-red-500 font-bold hover:underline"
             >
               {isRegister ? "Already have an account? Sign In" : "Don't have an account? Create One"}
             </button>
@@ -349,7 +349,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans flex flex-col justify-between">
       <Navbar />
       <Suspense fallback={
-        <div className="py-20 text-center text-xs text-red-600 font-bold">
+        <div className="py-20 text-center text-xs text-red-500 font-bold">
           Loading Secure Authentication Gateway...
         </div>
       }>

@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 :root {
-  --bosa-red: #DC2626;          /* Primary Vibrant Red */
-  --bosa-red-hover: #B91C1C;    /* Deep Crimson */
+  --bosa-red: #EF4444;          /* Lighter Fresh Vibrant Red */
+  --bosa-red-hover: #DC2626;    /* Red Hover */
   --bosa-red-light: #FEF2F2;    /* Soft Red White tint */
   --bosa-dark: #0F172A;         /* Rich Slate Header */
   --bosa-light: #FFFFFF;        /* Clean White Background */
@@ -32,11 +32,11 @@ body {
   background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #DC2626;
+  background: #EF4444;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B91C1C;
+  background: #DC2626;
 }
 
 /* Rented Card with Soft Shadow & Red Hover */
@@ -47,8 +47,8 @@ body {
 }
 
 .bosa-card:hover {
-  border-color: #DC2626;
-  box-shadow: 0 15px 30px -10px rgba(220, 38, 38, 0.18), 0 0 15px rgba(220, 38, 38, 0.1);
+  border-color: #EF4444;
+  box-shadow: 0 15px 30px -10px rgba(239, 68, 68, 0.16), 0 0 15px rgba(239, 68, 68, 0.08);
   transform: translateY(-4px);
 }
 
@@ -69,21 +69,21 @@ body {
 
 /* Red & Crimson Gradients */
 .bosa-gradient-bg {
-  background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
-}
-
-.bosa-gold-gradient-bg {
   background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
 }
 
+.bosa-gold-gradient-bg {
+  background: linear-gradient(135deg, #F87171 0%, #EF4444 100%);
+}
+
 .bosa-gradient-text {
-  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+  background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gold-gradient-text {
-  background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -4,42 +4,40 @@ import { Building2, ShieldCheck, MapPin, Phone, Mail, ChevronRight } from "lucid
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 border-t-4 border-red-600 text-slate-100 text-sm font-sans pt-14 pb-10">
+    <footer className="bg-white border-t border-red-100 text-slate-900 text-sm font-sans pt-14 pb-10 shadow-[0_-4px_20px_rgba(0,0,0,0.03)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-200">
           
           {/* Col 1: Brand & Philosophy */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-xl bg-red-600 p-0.5 flex items-center justify-center shadow-md">
-                <div className="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
-                  <Building2 className="w-5 h-5 text-red-500" />
-                </div>
+              <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-200 p-0.5 flex items-center justify-center shadow-sm">
+                <Building2 className="w-5 h-5 text-red-500" />
               </div>
               <div>
-                <span className="font-heading text-xl font-bold text-white tracking-wide block">
+                <span className="font-heading text-2xl font-black text-black tracking-wide block">
                   RENTED<span className="text-red-500">.IN</span>
                 </span>
-                <span className="text-[10px] text-red-400 font-bold uppercase tracking-wider block">
+                <span className="text-[10px] text-red-600 font-extrabold uppercase tracking-wider block">
                   PG • Flat • House • Shop
                 </span>
               </div>
             </div>
-            <p className="text-sm leading-relaxed text-slate-300 font-normal">
+            <p className="text-sm leading-relaxed text-black/80 font-normal">
               India&apos;s trusted rental portal for finding verified PG accommodations, 1/2/3 BHK flats, independent houses, and commercial shops with zero hassle.
             </p>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-950/60 border border-red-600/40 text-xs font-semibold text-red-300">
-              <ShieldCheck className="w-4 h-4 text-red-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-50 border border-red-200 text-xs font-bold text-red-700">
+              <ShieldCheck className="w-4 h-4 text-red-500" />
               <span>100% Verified Rental Listings</span>
             </div>
           </div>
 
           {/* Col 2: Rental Categories */}
           <div>
-            <h4 className="font-heading text-white font-bold text-base mb-4 tracking-wider uppercase border-b border-red-600/40 pb-2 inline-block">
+            <h4 className="font-heading text-black font-black text-base mb-4 tracking-wider uppercase border-b-2 border-red-500 pb-1.5 inline-block">
               Rental Categories
             </h4>
-            <ul className="space-y-2.5 text-sm font-medium">
+            <ul className="space-y-2.5 text-sm font-semibold">
               {[
                 { label: "PG & Co-Living Hostels", href: "/properties?property_type=PG" },
                 { label: "Flats & Apartments for Rent", href: "/properties?property_type=Flat" },
@@ -48,7 +46,7 @@ export default function Footer() {
                 { label: "Furnished Studio Apartments", href: "/properties?property_type=Flat&furnishing=Fully+Furnished" }
               ].map((item, idx) => (
                 <li key={idx}>
-                  <Link href={item.href} className="text-slate-300 hover:text-red-400 transition-colors flex items-center gap-1.5 group">
+                  <Link href={item.href} className="text-slate-800 hover:text-red-500 transition-colors flex items-center gap-1.5 group">
                     <ChevronRight className="w-3.5 h-3.5 text-red-500 group-hover:translate-x-0.5 transition-transform" />
                     <span>{item.label}</span>
                   </Link>
@@ -59,10 +57,10 @@ export default function Footer() {
 
           {/* Col 3: Popular Cities */}
           <div>
-            <h4 className="font-heading text-white font-bold text-base mb-4 tracking-wider uppercase border-b border-red-600/40 pb-2 inline-block">
+            <h4 className="font-heading text-black font-black text-base mb-4 tracking-wider uppercase border-b-2 border-red-500 pb-1.5 inline-block">
               Popular Rental Hubs
             </h4>
-            <ul className="space-y-2.5 text-sm font-medium">
+            <ul className="space-y-2.5 text-sm font-semibold">
               {[
                 { label: "Delhi NCR (North & South Campus)", href: "/properties?location=Delhi" },
                 { label: "Gurgaon (DLF & Golf Course Rd)", href: "/properties?location=Gurgaon" },
@@ -72,7 +70,7 @@ export default function Footer() {
                 { label: "Pune (Koregaon Park & Viman Nagar)", href: "/properties?location=Pune" }
               ].map((item, idx) => (
                 <li key={idx}>
-                  <Link href={item.href} className="text-slate-300 hover:text-red-400 transition-colors flex items-center gap-1.5 group">
+                  <Link href={item.href} className="text-slate-800 hover:text-red-500 transition-colors flex items-center gap-1.5 group">
                     <ChevronRight className="w-3.5 h-3.5 text-red-500 group-hover:translate-x-0.5 transition-transform" />
                     <span>{item.label}</span>
                   </Link>
@@ -83,24 +81,30 @@ export default function Footer() {
 
           {/* Col 4: Support & Contact */}
           <div>
-            <h4 className="font-heading text-white font-bold text-base mb-4 tracking-wider uppercase border-b border-red-600/40 pb-2 inline-block">
+            <h4 className="font-heading text-black font-black text-base mb-4 tracking-wider uppercase border-b-2 border-red-500 pb-1.5 inline-block">
               Rental Helpdesk
             </h4>
-            <p className="text-sm text-slate-300 mb-4 font-normal leading-relaxed">
+            <p className="text-sm text-slate-700 mb-4 font-medium leading-relaxed">
               Have questions about renting a flat, PG, house, or commercial shop? Our support team is here to assist.
             </p>
-            <div className="space-y-2.5 text-sm font-medium text-slate-200">
-              <a href="tel:+919876543210" className="flex items-center gap-2.5 text-slate-200 hover:text-red-400 transition-colors">
-                <Phone className="w-4 h-4 text-red-500 shrink-0" />
+            <div className="space-y-2.5 text-sm font-semibold">
+              <a href="tel:+919876543210" className="flex items-center gap-2.5 text-black hover:text-red-500 transition-colors">
+                <div className="w-7 h-7 rounded-full bg-red-50 flex items-center justify-center text-red-500 border border-red-200 shrink-0">
+                  <Phone className="w-3.5 h-3.5" />
+                </div>
                 <span>+91 98765 43210</span>
               </a>
-              <a href="mailto:support@rented.in" className="flex items-center gap-2.5 text-slate-200 hover:text-red-400 transition-colors">
-                <Mail className="w-4 h-4 text-red-500 shrink-0" />
+              <a href="mailto:support@rented.in" className="flex items-center gap-2.5 text-black hover:text-red-500 transition-colors">
+                <div className="w-7 h-7 rounded-full bg-red-50 flex items-center justify-center text-red-500 border border-red-200 shrink-0">
+                  <Mail className="w-3.5 h-3.5" />
+                </div>
                 <span>support@rented.in</span>
               </a>
-              <div className="flex items-start gap-2.5 text-slate-300">
-                <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                <span className="text-xs">NCR Corporate Office, Connaught Place & Sector 18 Noida</span>
+              <div className="flex items-start gap-2.5 text-slate-700 pt-1">
+                <div className="w-7 h-7 rounded-full bg-red-50 flex items-center justify-center text-red-500 border border-red-200 shrink-0 mt-0.5">
+                  <MapPin className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-xs font-medium">NCR Corporate Office, Connaught Place & Sector 18 Noida</span>
               </div>
             </div>
           </div>
@@ -108,17 +112,19 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs font-medium text-slate-400 gap-4">
-          <p>© 2026 RENTED Portal. All rights reserved. Dealing in PG, House, Flat & Shop.</p>
-          <div className="flex space-x-6">
-            <Link href="/privacy" className="hover:text-red-400 transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-red-400 transition-colors">Terms of Service</Link>
-            <Link href="/admin" className="text-red-400 hover:underline font-semibold">Admin Portal</Link>
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs font-semibold text-slate-600 gap-4">
+          <p>
+            © 2026 <strong className="text-black font-extrabold">RENTED</strong>. All rights reserved. Dealing in <span className="text-red-600 font-bold">PG, House, Flat & Shop</span>.
+          </p>
+          <div className="flex items-center space-x-6">
+            <Link href="/privacy" className="text-black hover:text-red-500 transition-colors font-medium">Privacy Policy</Link>
+            <Link href="/terms" className="text-black hover:text-red-500 transition-colors font-medium">Terms of Service</Link>
+            <Link href="/admin" className="text-red-600 hover:text-red-700 bg-red-50 border border-red-200 px-2.5 py-1 rounded-md font-bold transition-all shadow-sm">
+              Admin Portal
+            </Link>
           </div>
         </div>
       </div>
     </footer>
   );
 }
-
-

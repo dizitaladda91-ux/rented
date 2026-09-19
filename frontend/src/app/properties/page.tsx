@@ -198,12 +198,12 @@ function SearchResultsContent() {
       {/* HEADER BANNER */}
       <div className="bg-white border-b border-slate-200 py-12 px-4 shadow-sm">
         <div className="max-w-7xl mx-auto text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-xs font-bold text-red-600 uppercase tracking-widest">
-            <Sparkles className="w-4 h-4 text-red-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-xs font-bold text-red-500 uppercase tracking-widest">
+            <Sparkles className="w-4 h-4 text-red-500" />
             <span>Verified Rental Discovery</span>
           </div>
           <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Explore Verified <span className="text-red-600">Rental Properties</span>
+            Explore Verified <span className="text-red-500">Rental Properties</span>
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto font-normal">
             Showing {total} verified PG, flats, independent houses, and commercial shops available for rent across India.
@@ -215,7 +215,7 @@ function SearchResultsContent() {
         
         {/* BUYER PERSONALIZED LOCATION BANNER */}
         {user && (user.city || user.pincode) && (
-          <div className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white p-5 rounded-3xl shadow-lg border border-red-500/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="bg-gradient-to-r from-red-500 via-red-600 to-rose-600 text-white p-5 rounded-3xl shadow-lg border border-red-400/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3.5">
               <div className="w-12 h-12 rounded-2xl bg-white/20 border border-white/30 flex items-center justify-center text-white shrink-0 shadow-inner">
                 <Compass className="w-6 h-6 animate-pulse" />
@@ -246,7 +246,7 @@ function SearchResultsContent() {
               }}
               className={`px-5 py-2.5 rounded-xl text-xs font-heading font-bold uppercase tracking-wider transition-all flex items-center gap-2 shrink-0 ${
                 selectedCity.toLowerCase() === (user.city || "").toLowerCase()
-                  ? "bg-white text-red-600 shadow-lg font-extrabold"
+                  ? "bg-white text-red-500 shadow-lg font-extrabold"
                   : "bg-white/20 hover:bg-white/30 text-white border border-white/30"
               }`}
             >
@@ -266,7 +266,7 @@ function SearchResultsContent() {
         <section className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-600">
+              <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-500">
                 1. Property Types We Rent
               </span>
               <h2 className="font-heading text-xl sm:text-2xl font-bold text-slate-900 mt-0.5">
@@ -277,7 +277,7 @@ function SearchResultsContent() {
             {propertyType && (
               <button
                 onClick={() => setPropertyType("")}
-                className="text-xs text-red-600 hover:underline font-semibold flex items-center gap-1"
+                className="text-xs text-red-500 hover:underline font-semibold flex items-center gap-1"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Show All Categories</span>
@@ -299,19 +299,19 @@ function SearchResultsContent() {
                     }}
                     className={`p-6 rounded-2xl border-2 cursor-pointer transition-all flex items-center space-x-4 ${
                       isActive
-                        ? "bg-red-600 text-white shadow-xl border-red-700"
+                        ? "bg-red-500 text-white shadow-xl border-red-600"
                         : "bg-white border-slate-200 hover:border-red-400 text-slate-900"
                     }`}
                   >
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
-                      isActive ? "bg-white/20 text-white" : "bg-red-50 text-red-600"
+                      isActive ? "bg-white/20 text-white" : "bg-red-50 text-red-500"
                     }`}>
                       <IconComp className="w-6 h-6" />
                     </div>
 
                     <div>
                       <span className={`text-[10px] font-mono uppercase tracking-widest block font-bold ${
-                        isActive ? "text-red-100" : "text-red-600"
+                        isActive ? "text-red-100" : "text-red-500"
                       }`}>
                         {cat.count}
                       </span>
@@ -335,7 +335,7 @@ function SearchResultsContent() {
         <section className="space-y-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
           <div className="flex items-center justify-between">
             <div>
-              <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-600">
+              <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-500">
                 2. Prime City Enclaves
               </span>
               <h2 className="font-heading text-xl font-bold text-slate-900 mt-0.5">
@@ -345,7 +345,7 @@ function SearchResultsContent() {
             {selectedCity && (
               <button
                 onClick={() => setSelectedCity("")}
-                className="text-xs text-red-600 hover:underline font-semibold flex items-center gap-1"
+                className="text-xs text-red-500 hover:underline font-semibold flex items-center gap-1"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>All Cities</span>
@@ -365,11 +365,11 @@ function SearchResultsContent() {
                   }}
                   className={`px-5 py-2.5 rounded-xl text-xs font-heading font-bold uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-1.5 ${
                     isActive
-                      ? "bg-red-600 text-white shadow-md border border-red-700"
+                      ? "bg-red-500 text-white shadow-md border border-red-600"
                       : "bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200"
                   }`}
                 >
-                  <MapPin className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-red-600"}`} />
+                  <MapPin className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-red-500"}`} />
                   <span>{ct.name}</span>
                 </button>
               );
@@ -385,13 +385,13 @@ function SearchResultsContent() {
             
             {/* Left: Quick Search Input */}
             <div className="relative w-full md:w-96">
-              <MapPin className="w-4 h-4 text-red-600 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <MapPin className="w-4 h-4 text-red-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search city (e.g. Delhi), area, or keyword..."
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-red-600 font-medium"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-red-500 font-medium"
               />
               {query && (
                 <button
@@ -409,14 +409,14 @@ function SearchResultsContent() {
                 onClick={() => setExpandedFilter(!expandedFilter)}
                 className={`px-4 py-2.5 rounded-xl border text-xs font-bold flex items-center gap-2 transition-all ${
                   expandedFilter || maxPrice || bedrooms || minPrice
-                    ? "bg-red-50 border-red-300 text-red-700"
+                    ? "bg-red-50 border-red-200 text-red-700"
                     : "bg-slate-100 border-slate-200 text-slate-800 hover:bg-slate-200"
                 }`}
               >
-                <SlidersHorizontal className="w-4 h-4 text-red-600" />
+                <SlidersHorizontal className="w-4 h-4 text-red-500" />
                 <span>{expandedFilter ? "Hide Budget & Beds" : "Budget & Bedroom Filters"}</span>
                 {(maxPrice || bedrooms) && (
-                  <span className="w-2 h-2 rounded-full bg-red-600 inline-block" />
+                  <span className="w-2 h-2 rounded-full bg-red-500 inline-block" />
                 )}
               </button>
 
@@ -430,7 +430,7 @@ function SearchResultsContent() {
 
               {/* Sort Dropdown */}
               <div className="flex items-center gap-2 bg-slate-100 border border-slate-200 rounded-xl px-3 py-2 text-xs font-medium text-slate-800">
-                <ArrowUpDown className="w-3.5 h-3.5 text-red-600" />
+                <ArrowUpDown className="w-3.5 h-3.5 text-red-500" />
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
@@ -456,7 +456,7 @@ function SearchResultsContent() {
                 <select
                   value={maxPrice}
                   onChange={(e) => setMaxPrice(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-semibold focus:outline-none focus:border-red-600"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-semibold focus:outline-none focus:border-red-500"
                 >
                   <option value="">Any Monthly Rent</option>
                   <option value="10000">Up to ₹10,000 / mo</option>
@@ -473,7 +473,7 @@ function SearchResultsContent() {
                 <select
                   value={bedrooms}
                   onChange={(e) => setBedrooms(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-semibold focus:outline-none focus:border-red-600"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-semibold focus:outline-none focus:border-red-500"
                 >
                   <option value="">Any Configuration</option>
                   <option value="1">1 Room / 1 BHK</option>
@@ -489,7 +489,7 @@ function SearchResultsContent() {
                 <select
                   value={selectedState}
                   onChange={(e) => setSelectedState(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-semibold focus:outline-none focus:border-red-600"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-semibold focus:outline-none focus:border-red-500"
                 >
                   <option value="">All States</option>
                   <option value="Delhi">Delhi NCR</option>
@@ -508,7 +508,7 @@ function SearchResultsContent() {
                   value={selectedPincode}
                   onChange={(e) => setSelectedPincode(e.target.value)}
                   placeholder="e.g. 110074"
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-mono font-bold focus:outline-none focus:border-red-600"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-mono font-bold focus:outline-none focus:border-red-500"
                 />
               </div>
 
@@ -526,7 +526,7 @@ function SearchResultsContent() {
 
                 <button
                   onClick={resetFilters}
-                  className="text-left text-xs text-red-600 hover:underline font-bold"
+                  className="text-left text-xs text-red-500 hover:underline font-bold"
                 >
                   Reset All Filters
                 </button>
@@ -541,7 +541,7 @@ function SearchResultsContent() {
               
               {selectedCity && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 text-red-900 border border-red-200 font-semibold">
-                  <MapPin className="w-3 h-3 text-red-600" />
+                  <MapPin className="w-3 h-3 text-red-500" />
                   <span>City: {selectedCity}</span>
                   <button onClick={() => setSelectedCity("")} className="hover:text-red-700 ml-0.5">
                     <X className="w-3 h-3" />
@@ -569,7 +569,7 @@ function SearchResultsContent() {
 
               {maxPrice && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 text-red-900 border border-red-200 font-semibold">
-                  <IndianRupee className="w-3 h-3 text-red-600" />
+                  <IndianRupee className="w-3 h-3 text-red-500" />
                   <span>Max: {formatBudgetDisplay(maxPrice)}</span>
                   <button onClick={() => setMaxPrice("")} className="hover:text-red-700 ml-0.5">
                     <X className="w-3 h-3" />
@@ -579,7 +579,7 @@ function SearchResultsContent() {
 
               {bedrooms && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 text-red-900 border border-red-200 font-semibold">
-                  <Bed className="w-3 h-3 text-red-600" />
+                  <Bed className="w-3 h-3 text-red-500" />
                   <span>Bedrooms: {bedrooms}+ BHK</span>
                   <button onClick={() => setBedrooms("")} className="hover:text-red-700 ml-0.5">
                     <X className="w-3 h-3" />
@@ -617,8 +617,8 @@ function SearchResultsContent() {
               Matching Properties ({properties.length})
             </h3>
             
-            <div className="flex items-center gap-2 text-xs text-red-600 font-semibold">
-              <ShieldCheck className="w-4 h-4 text-red-600" />
+            <div className="flex items-center gap-2 text-xs text-red-500 font-semibold">
+              <ShieldCheck className="w-4 h-4 text-red-500" />
               <span>Verified Direct Landlord Listings</span>
             </div>
           </div>
@@ -678,7 +678,7 @@ export default function SearchResultsPage() {
     <div className="min-h-screen bg-[#F8FAFC]">
       <Navbar />
       <Suspense fallback={
-        <div className="py-20 text-center text-xs text-red-600 font-bold">
+        <div className="py-20 text-center text-xs text-red-500 font-bold">
           Loading Rented Marketplace...
         </div>
       }>

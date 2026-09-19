@@ -53,7 +53,7 @@ export default function PropertyCard({ property, onFavoriteToggle, isFavorite = 
 
   return (
     <Card3D intensity={8} depth={15} className="h-full">
-      <div className="group relative bosa-card rounded-2xl overflow-hidden flex flex-col h-full bg-white shadow-md border border-slate-200 hover:border-red-600 hover:shadow-xl transition-all duration-300">
+      <div className="group relative bosa-card rounded-2xl overflow-hidden flex flex-col h-full bg-white shadow-md border border-slate-200 hover:border-red-500 hover:shadow-xl transition-all duration-300">
         
         {/* 1. Image Container */}
         <div className="relative h-64 w-full overflow-hidden bg-slate-900">
@@ -72,7 +72,7 @@ export default function PropertyCard({ property, onFavoriteToggle, isFavorite = 
           {/* Top Header Badges */}
           <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-10">
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1 rounded-md text-[11px] font-heading font-bold uppercase tracking-wider bg-red-600 text-white shadow-md">
+              <span className="px-3 py-1 rounded-md text-[11px] font-heading font-bold uppercase tracking-wider bg-red-500 text-white shadow-md">
                 FOR RENT
               </span>
               {property.verification_status === "VERIFIED" && (
@@ -85,9 +85,9 @@ export default function PropertyCard({ property, onFavoriteToggle, isFavorite = 
 
             <button
               onClick={handleFavoriteClick}
-              className="w-9 h-9 rounded-full bg-white/90 border border-slate-200 hover:border-red-600 flex items-center justify-center backdrop-blur-md text-slate-700 hover:text-red-600 transition-colors shadow-sm"
+              className="w-9 h-9 rounded-full bg-white/90 border border-slate-200 hover:border-red-500 flex items-center justify-center backdrop-blur-md text-slate-700 hover:text-red-500 transition-colors shadow-sm"
             >
-              <Heart className={`w-4 h-4 ${fav ? "fill-red-600 text-red-600" : ""}`} />
+              <Heart className={`w-4 h-4 ${fav ? "fill-red-500 text-red-500" : ""}`} />
             </button>
           </div>
 
@@ -104,7 +104,7 @@ export default function PropertyCard({ property, onFavoriteToggle, isFavorite = 
           <div>
             {/* Price Header */}
             <div className="flex items-baseline justify-between mb-2">
-              <span className="font-heading text-2xl font-extrabold text-red-600">
+              <span className="font-heading text-2xl font-extrabold text-red-500">
                 {formatIndianPrice(property.price, true)}
               </span>
               {property.furnishing && (
@@ -116,14 +116,14 @@ export default function PropertyCard({ property, onFavoriteToggle, isFavorite = 
 
             {/* Title */}
             <Link href={`/properties/${property.id}`} className="block">
-              <h3 className="font-heading text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors line-clamp-2 leading-snug">
+              <h3 className="font-heading text-lg font-bold text-slate-900 group-hover:text-red-500 transition-colors line-clamp-2 leading-snug">
                 {property.title}
               </h3>
             </Link>
 
             {/* Location */}
             <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium mt-2">
-              <MapPin className="w-3.5 h-3.5 text-red-600 flex-shrink-0" />
+              <MapPin className="w-3.5 h-3.5 text-red-500 flex-shrink-0" />
               <span className="truncate">
                 {property.location ? `${property.location.locality}, ${property.location.city}` : "India"}
               </span>
@@ -134,7 +134,7 @@ export default function PropertyCard({ property, onFavoriteToggle, isFavorite = 
           <div className="mt-5 pt-4 border-t border-slate-100 grid grid-cols-3 gap-2 text-center text-xs text-slate-700 bg-slate-50 rounded-xl p-3 border border-slate-200">
             <div className="flex flex-col items-center">
               <div className="flex items-center gap-1 text-slate-900 font-semibold font-heading">
-                <Maximize2 className="w-3.5 h-3.5 text-red-600" />
+                <Maximize2 className="w-3.5 h-3.5 text-red-500" />
                 <span>{property.built_up_area_sqft || property.land_area_sqft_normalized || 500} sqft</span>
               </div>
               <span className="text-[10px] text-slate-500 mt-0.5">Carpet Area</span>
@@ -148,7 +148,7 @@ export default function PropertyCard({ property, onFavoriteToggle, isFavorite = 
             ) : property.bedrooms !== undefined && property.bedrooms > 0 ? (
               <div className="flex flex-col items-center border-x border-slate-200">
                 <div className="flex items-center gap-1 text-slate-900 font-semibold font-heading">
-                  <Bed className="w-3.5 h-3.5 text-red-600" />
+                  <Bed className="w-3.5 h-3.5 text-red-500" />
                   <span>{property.bedrooms} {property.property_type === "PG" ? "Bed" : "BHK"}</span>
                 </div>
                 <span className="text-[10px] text-slate-500 mt-0.5">{property.property_type === "PG" ? "Sharing" : "Bedrooms"}</span>
@@ -162,7 +162,7 @@ export default function PropertyCard({ property, onFavoriteToggle, isFavorite = 
 
             <div className="flex flex-col items-center">
               <div className="flex items-center gap-1 text-slate-900 font-semibold font-heading">
-                <Bath className="w-3.5 h-3.5 text-red-600" />
+                <Bath className="w-3.5 h-3.5 text-red-500" />
                 <span>{property.bathrooms || 1} Bath</span>
               </div>
               <span className="text-[10px] text-slate-500 mt-0.5">Washroom</span>
@@ -172,7 +172,7 @@ export default function PropertyCard({ property, onFavoriteToggle, isFavorite = 
           {/* 4. Seller Info Footer & Action Link */}
           <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-full bg-red-50 border border-red-200 flex items-center justify-center text-red-600">
+              <div className="w-7 h-7 rounded-full bg-red-50 border border-red-200 flex items-center justify-center text-red-500">
                 <UserCheck className="w-3.5 h-3.5" />
               </div>
               <span className="text-[11px] text-slate-600 font-medium truncate max-w-[120px]">
@@ -182,7 +182,7 @@ export default function PropertyCard({ property, onFavoriteToggle, isFavorite = 
 
             <Link
               href={`/properties/${property.id}`}
-              className="px-3.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-heading font-semibold text-xs flex items-center gap-1.5 shadow-sm hover:shadow-md transition-all"
+              className="px-3.5 py-1.5 rounded-lg bg-red-500 hover:bg-red-600 text-white font-heading font-semibold text-xs flex items-center gap-1.5 shadow-sm hover:shadow-md transition-all"
             >
               <span>View Details</span>
               <ArrowRight className="w-3.5 h-3.5" />

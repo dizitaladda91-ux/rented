@@ -102,19 +102,19 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-10 mb-20">
         <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-xl grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <span className="font-heading text-3xl sm:text-4xl font-extrabold text-red-600 block">5,000+</span>
+            <span className="font-heading text-3xl sm:text-4xl font-extrabold text-red-500 block">5,000+</span>
             <span className="text-xs text-slate-600 uppercase tracking-wider font-bold mt-1 block">Active Rentals</span>
           </div>
           <div>
-            <span className="font-heading text-3xl sm:text-4xl font-extrabold text-red-600 block">Zero</span>
+            <span className="font-heading text-3xl sm:text-4xl font-extrabold text-red-500 block">Zero</span>
             <span className="text-xs text-slate-600 uppercase tracking-wider font-bold mt-1 block">Brokerage Options</span>
           </div>
           <div>
-            <span className="font-heading text-3xl sm:text-4xl font-extrabold text-red-600 block">100%</span>
+            <span className="font-heading text-3xl sm:text-4xl font-extrabold text-red-500 block">100%</span>
             <span className="text-xs text-slate-600 uppercase tracking-wider font-bold mt-1 block">Verified Landlords</span>
           </div>
           <div>
-            <span className="font-heading text-3xl sm:text-4xl font-extrabold text-red-600 block">24-Hr</span>
+            <span className="font-heading text-3xl sm:text-4xl font-extrabold text-red-500 block">24-Hr</span>
             <span className="text-xs text-slate-600 uppercase tracking-wider font-bold mt-1 block">Fast Move-In</span>
           </div>
         </div>
@@ -123,11 +123,11 @@ export default function HomePage() {
       {/* SECTION 2: Explore Rental Types (Category Cards Grid with 3D Tilt) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 mb-16">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-600">
+          <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-500">
             Curated Dealing Categories
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-2">
-            Explore <span className="text-red-600">Rental Properties</span>
+            Explore <span className="text-red-500">Rental Properties</span>
           </h2>
           <p className="text-xs text-slate-600 mt-2">
             Browse through our verified selections for PGs, residential flats, family houses, and commercial retail shops.
@@ -179,11 +179,11 @@ export default function HomePage() {
           
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-slate-200 pb-6">
             <div>
-              <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-600 block mb-1">
+              <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-500 block mb-1">
                 Handpicked Portfolios
               </span>
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900">
-                Featured <span className="text-red-600">Properties for Rent</span>
+                Featured <span className="text-red-500">Properties for Rent</span>
               </h2>
             </div>
 
@@ -201,8 +201,8 @@ export default function HomePage() {
                   onClick={() => setSelectedTab(tab.key)}
                   className={`px-4 py-2 rounded-xl text-xs font-heading font-bold uppercase tracking-wider transition-all whitespace-nowrap ${
                     selectedTab === tab.key
-                      ? "bg-red-600 text-white shadow-md"
-                      : "bg-white text-slate-700 hover:text-red-600 border border-slate-200"
+                      ? "bg-red-500 text-white shadow-md"
+                      : "bg-white text-slate-700 hover:text-red-500 border border-slate-200"
                   }`}
                 >
                   {tab.label}
@@ -228,7 +228,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link
               href="/properties"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl hover:opacity-95 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-red-500 hover:bg-red-600 text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl hover:opacity-95 transition-all"
             >
               <span>Explore All {properties.length} Rentals</span>
               <ArrowRight className="w-4 h-4" />
@@ -256,7 +256,7 @@ export default function HomePage() {
             </Card3D>
             {/* Floating Experience Badge */}
             <div className="absolute -bottom-6 -right-4 sm:right-6 bg-white p-6 rounded-2xl border border-red-200 shadow-2xl text-center z-20">
-              <span className="font-heading text-4xl font-extrabold text-red-600 block">50,000+</span>
+              <span className="font-heading text-4xl font-extrabold text-red-500 block">50,000+</span>
               <span className="text-xs text-slate-700 font-bold uppercase tracking-wider mt-1 block">
                 Happy Tenants & Owners
               </span>
@@ -266,12 +266,12 @@ export default function HomePage() {
           {/* Right Content */}
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-xs font-bold text-red-700 uppercase tracking-wider">
-              <Award className="w-4 h-4 text-red-600" />
+              <Award className="w-4 h-4 text-red-500" />
               <span>Why Choose Rented</span>
             </div>
 
             <h2 className="font-heading text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
-              India’s Most Trusted <span className="text-red-600">Rental Portal</span>
+              India’s Most Trusted <span className="text-red-500">Rental Portal</span>
             </h2>
 
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
@@ -286,7 +286,7 @@ export default function HomePage() {
                 "Instant Schedule Visit & Contact Landlord Directly",
               ].map((point, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center flex-shrink-0 text-white font-bold text-xs shadow-sm">
+                  <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0 text-white font-bold text-xs shadow-sm">
                     ✓
                   </div>
                   <span className="text-xs sm:text-sm text-slate-800 font-semibold">{point}</span>
@@ -297,7 +297,7 @@ export default function HomePage() {
             <div className="pt-4 flex items-center gap-4">
               <Link
                 href="/sell"
-                className="px-6 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
+                className="px-6 py-3 rounded-xl bg-red-500 hover:bg-red-600 text-white font-heading font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
               >
                 Post Rental Listing
               </Link>
@@ -319,11 +319,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-600">
+            <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-500">
               Prime Destinations
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-2">
-              Explore by <span className="text-red-600">Popular Rental Hub</span>
+              Explore by <span className="text-red-500">Popular Rental Hub</span>
             </h2>
           </div>
 
@@ -332,7 +332,7 @@ export default function HomePage() {
               <Card3D key={idx} intensity={10} depth={20} className="h-80">
                 <Link
                   href={`/properties?location=${encodeURIComponent(loc.query)}`}
-                  className="bosa-card rounded-2xl overflow-hidden h-full relative flex flex-col justify-end p-5 group shadow-md hover:border-red-600 block"
+                  className="bosa-card rounded-2xl overflow-hidden h-full relative flex flex-col justify-end p-5 group shadow-md hover:border-red-500 block"
                 >
                   <Image
                     src={loc.image}
@@ -360,7 +360,7 @@ export default function HomePage() {
       {/* SECTION 6: Call To Action Banner */}
       <section className="bg-white border-t border-b border-slate-200 py-20 text-slate-900 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-600">
+          <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-500">
             Looking to Rent or Post a Property?
           </span>
           <h2 className="font-heading text-3xl sm:text-5xl font-extrabold text-slate-900 mt-3 max-w-3xl mx-auto leading-tight">
@@ -373,7 +373,7 @@ export default function HomePage() {
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/sell"
-              className="px-8 py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl hover:scale-105 transition-all inline-flex items-center justify-center gap-2"
+              className="px-8 py-3.5 rounded-xl bg-red-500 hover:bg-red-600 text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl hover:scale-105 transition-all inline-flex items-center justify-center gap-2"
             >
               <span>Post Rental Listing</span>
               <ArrowRight className="w-4 h-4 text-white" />

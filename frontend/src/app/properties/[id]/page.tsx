@@ -125,7 +125,7 @@ export default function PropertyDetailPage() {
   const isShop = property.property_type?.toUpperCase() === "SHOP";
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans selection:bg-red-600 selection:text-white">
+    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans selection:bg-red-500 selection:text-white">
       <Navbar />
 
       {/* Breadcrumb & Navigation */}
@@ -133,7 +133,7 @@ export default function PropertyDetailPage() {
         <div className="flex items-center justify-between mb-4">
           <button
             onClick={() => router.back()}
-            className="text-xs font-semibold text-gray-600 hover:text-red-600 flex items-center gap-1.5 transition-colors bg-white px-3 py-1.5 rounded-lg border border-gray-200 shadow-sm"
+            className="text-xs font-semibold text-gray-600 hover:text-red-500 flex items-center gap-1.5 transition-colors bg-white px-3 py-1.5 rounded-lg border border-gray-200 shadow-sm"
           >
             <ChevronLeft className="w-4 h-4" />
             Back to All Rentals
@@ -143,10 +143,10 @@ export default function PropertyDetailPage() {
             <button
               onClick={() => setIsSaved(!isSaved)}
               className={`p-2 rounded-lg border transition-all flex items-center gap-1.5 text-xs font-semibold ${
-                isSaved ? "bg-red-50 text-red-600 border-red-200" : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
+                isSaved ? "bg-red-50 text-red-500 border-red-200" : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
               }`}
             >
-              <Heart className={`w-4 h-4 ${isSaved ? "fill-red-600 text-red-600" : ""}`} />
+              <Heart className={`w-4 h-4 ${isSaved ? "fill-red-500 text-red-500" : ""}`} />
               <span>{isSaved ? "Saved" : "Save"}</span>
             </button>
             <button
@@ -172,15 +172,15 @@ export default function PropertyDetailPage() {
         <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="px-3 py-1 rounded-md text-xs font-black uppercase tracking-wider bg-red-600 text-white">
+              <span className="px-3 py-1 rounded-md text-xs font-black uppercase tracking-wider bg-red-500 text-white">
                 FOR RENT
               </span>
-              <span className="px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-red-50 text-red-600 border border-red-200">
+              <span className="px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-red-50 text-red-700 border border-red-200">
                 {property.property_type === "PG" ? "PG / Co-Living" : property.property_type}
               </span>
               {property.verification_status === "VERIFIED" && (
                 <span className="px-3 py-1 rounded-md text-xs font-bold bg-red-50 text-red-700 border border-red-200 flex items-center gap-1">
-                  <ShieldCheck className="w-4 h-4 text-red-600" />
+                  <ShieldCheck className="w-4 h-4 text-red-500" />
                   Verified Landlord
                 </span>
               )}
@@ -194,7 +194,7 @@ export default function PropertyDetailPage() {
             </h1>
 
             <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600 font-medium">
-              <MapPin className="w-4 h-4 text-red-600 flex-shrink-0" />
+              <MapPin className="w-4 h-4 text-red-500 flex-shrink-0" />
               <span>
                 {property.location ? `${property.location.address || ""}, ${property.location.locality}, ${property.location.city}, ${property.location.state}` : "India"}
               </span>
@@ -206,13 +206,13 @@ export default function PropertyDetailPage() {
             <span className="text-xs text-gray-500 font-semibold uppercase tracking-wider block mb-1">
               Monthly Rent
             </span>
-            <div className="text-3xl sm:text-4xl font-black text-red-600 tracking-tight">
+            <div className="text-3xl sm:text-4xl font-black text-red-500 tracking-tight">
               {formatRentPrice(property.price)}
             </div>
             <div className="flex items-center gap-3 mt-1.5 lg:justify-end text-xs text-gray-500">
               <span className="font-medium text-gray-700">Deposit: ₹{(property.price * 2).toLocaleString("en-IN")}</span>
               <span>•</span>
-              <span className="text-red-600 font-semibold">Ready to Move</span>
+              <span className="text-red-500 font-semibold">Ready to Move</span>
             </div>
           </div>
         </div>
@@ -420,7 +420,7 @@ export default function PropertyDetailPage() {
             {/* Verified Rental Assurance Block */}
             <div className="bg-red-50 rounded-2xl border border-red-200 p-6 sm:p-8 space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-red-500 text-white flex items-center justify-center">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
@@ -437,10 +437,10 @@ export default function PropertyDetailPage() {
 
           {/* RIGHT COLUMN: Contact Landlord & Book Visit Sticky Card */}
           <div className="lg:col-span-1">
-            <div className="bg-white p-6 rounded-2xl border-2 border-red-600 shadow-xl shadow-red-50 space-y-5 sticky top-28">
+            <div className="bg-white p-6 rounded-2xl border-2 border-red-500 shadow-xl shadow-red-100 space-y-5 sticky top-28">
               
               <div className="border-b border-gray-100 pb-4">
-                <span className="text-xs uppercase font-bold tracking-wider text-red-600 block mb-1">
+                <span className="text-xs uppercase font-bold tracking-wider text-red-500 block mb-1">
                   Direct Contact
                 </span>
                 <h3 className="text-xl font-extrabold text-gray-900">
@@ -450,14 +450,14 @@ export default function PropertyDetailPage() {
 
               {submitted ? (
                 <div className="p-6 rounded-xl bg-red-50 border border-red-200 text-center space-y-3">
-                  <CheckCircle2 className="w-12 h-12 text-red-600 mx-auto" />
+                  <CheckCircle2 className="w-12 h-12 text-red-500 mx-auto" />
                   <h4 className="text-base font-bold text-red-950">Request Submitted!</h4>
                   <p className="text-xs text-red-800">
                     The property manager and landlord have received your inquiry. You will be contacted shortly on your mobile number.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="text-xs font-bold text-red-600 hover:underline pt-2 block mx-auto"
+                    className="text-xs font-bold text-red-500 hover:underline pt-2 block mx-auto"
                   >
                     Submit another query
                   </button>
@@ -471,7 +471,7 @@ export default function PropertyDetailPage() {
                       type="button"
                       onClick={() => setInquiryType("callback")}
                       className={`flex-1 py-2 text-xs font-bold rounded-md transition-all ${
-                        inquiryType === "callback" ? "bg-red-600 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
+                        inquiryType === "callback" ? "bg-red-500 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
                       }`}
                     >
                       Instant Callback
@@ -480,7 +480,7 @@ export default function PropertyDetailPage() {
                       type="button"
                       onClick={() => setInquiryType("visit")}
                       className={`flex-1 py-2 text-xs font-bold rounded-md transition-all ${
-                        inquiryType === "visit" ? "bg-red-600 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
+                        inquiryType === "visit" ? "bg-red-500 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
                       }`}
                     >
                       Book Visit
@@ -495,7 +495,7 @@ export default function PropertyDetailPage() {
                       value={leadName}
                       onChange={(e) => setLeadName(e.target.value)}
                       placeholder="e.g. Aman Sharma"
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-600 focus:bg-white"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-500 focus:bg-white"
                     />
                   </div>
 
@@ -507,7 +507,7 @@ export default function PropertyDetailPage() {
                       value={leadPhone}
                       onChange={(e) => setLeadPhone(e.target.value)}
                       placeholder="+91 98765 43210"
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-600 focus:bg-white"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-500 focus:bg-white"
                     />
                   </div>
 
@@ -519,7 +519,7 @@ export default function PropertyDetailPage() {
                       value={leadEmail}
                       onChange={(e) => setLeadEmail(e.target.value)}
                       placeholder="aman@example.com"
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-600 focus:bg-white"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-500 focus:bg-white"
                     />
                   </div>
 
@@ -532,7 +532,7 @@ export default function PropertyDetailPage() {
                           required
                           value={visitDate}
                           onChange={(e) => setVisitDate(e.target.value)}
-                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-2.5 py-2 text-gray-900 focus:outline-none focus:border-red-600 focus:bg-white text-xs"
+                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-2.5 py-2 text-gray-900 focus:outline-none focus:border-red-500 focus:bg-white text-xs"
                         />
                       </div>
                       <div>
@@ -540,7 +540,7 @@ export default function PropertyDetailPage() {
                         <select
                           value={visitTime}
                           onChange={(e) => setVisitTime(e.target.value)}
-                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-2.5 py-2 text-gray-900 focus:outline-none focus:border-red-600 focus:bg-white text-xs"
+                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-2.5 py-2 text-gray-900 focus:outline-none focus:border-red-500 focus:bg-white text-xs"
                         >
                           <option value="10:00 AM">10:00 AM</option>
                           <option value="12:00 PM">12:00 PM</option>
@@ -559,13 +559,13 @@ export default function PropertyDetailPage() {
                       value={leadMessage}
                       onChange={(e) => setLeadMessage(e.target.value)}
                       placeholder="e.g. Looking to shift by next month, need single room..."
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-600 focus:bg-white"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-500 focus:bg-white"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-red-600/30 flex items-center justify-center gap-2 transition-all"
+                    className="w-full py-3.5 bg-red-500 hover:bg-red-600 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-red-500/25 flex items-center justify-center gap-2 transition-all"
                   >
                     <span>{inquiryType === "visit" ? "Book Free Site Visit" : "Get Landlord Contact"}</span>
                     <ArrowRight className="w-4 h-4" />

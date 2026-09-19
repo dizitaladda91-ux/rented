@@ -70,8 +70,8 @@ export default function LuxuryDropdown({
         onClick={() => setIsOpen(!isOpen)}
         className={`w-full text-left bg-slate-50/90 hover:bg-white border rounded-2xl p-2.5 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer select-none ${
           isOpen
-            ? "border-red-600 bg-white ring-2 ring-red-600/10 -translate-y-1 shadow-md"
-            : "border-slate-200/90 hover:border-red-600 hover:-translate-y-1"
+            ? "border-red-500 bg-white ring-2 ring-red-500/10 -translate-y-1 shadow-md"
+            : "border-slate-200/90 hover:border-red-500 hover:-translate-y-1"
         }`}
       >
         <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block px-1 mb-0.5">
@@ -90,7 +90,7 @@ export default function LuxuryDropdown({
           </div>
           <ChevronDown
             className={`w-3.5 h-3.5 text-slate-400 flex-shrink-0 transition-transform duration-300 ${
-              isOpen ? "transform rotate-180 text-red-600" : ""
+              isOpen ? "transform rotate-180 text-red-500" : ""
             }`}
           />
         </div>
@@ -98,7 +98,7 @@ export default function LuxuryDropdown({
 
       {/* Floating 3D Animated Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 z-[9999] bg-white border border-slate-200/90 rounded-2xl shadow-[0_25px_60px_-10px_rgba(220,38,38,0.2),0_10px_20px_-5px_rgba(0,0,0,0.1)] p-2 min-w-full w-max max-w-xs animate-in fade-in zoom-in-95 duration-200">
+        <div className="absolute top-full left-0 mt-2 z-[9999] bg-white border border-slate-200/90 rounded-2xl shadow-[0_25px_60px_-10px_rgba(239,68,68,0.15),0_10px_20px_-5px_rgba(0,0,0,0.1)] p-2 min-w-full w-max max-w-xs animate-in fade-in zoom-in-95 duration-200">
           <div className="max-h-64 overflow-y-auto space-y-1 py-1">
             {options.map((opt) => {
               const isSelected = opt.value === value;
@@ -109,7 +109,7 @@ export default function LuxuryDropdown({
                   className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs cursor-pointer transition-all duration-150 ${
                     isSelected
                       ? "bosa-gradient-bg text-white font-bold shadow-sm"
-                      : "text-slate-900 font-semibold hover:bg-slate-100 hover:text-red-600 hover:pl-4.5"
+                      : "text-slate-900 font-semibold hover:bg-slate-100 hover:text-red-500 hover:pl-4.5"
                   }`}
                 >
                   <div className="flex items-center gap-2 min-w-0">

@@ -9,10 +9,11 @@ module.exports = {
     extend: {
       colors: {
         rented: {
-          red: "#DC2626",         // Primary vibrant red
-          "red-hover": "#B91C1C", // Darker red on hover
-          "red-light": "#FEE2E2", // Soft red background badge
-          "red-dark": "#991B1B",  // Deep wine crimson
+          red: "#EF4444",         // Lighter fresh vibrant red (red-500)
+          "red-hover": "#DC2626", // Soft hover red (red-600)
+          "red-light": "#FEF2F2", // Soft light red tint (red-50)
+          "red-border": "#FECACA", // Light red border (red-200)
+          "red-dark": "#DC2626",  // Rich red accent
           white: "#FFFFFF",
           surface: "#F8FAFC",
           card: "#FFFFFF",
@@ -21,13 +22,13 @@ module.exports = {
         },
         luxury: {
           dark: "#0F172A",
-          emerald: "#DC2626",     // Map old emerald to red for compatibility
-          accent: "#EF4444",      // Map old gold accent to bright red
-          "accent-hover": "#DC2626",
-          bronze: "#991B1B",
+          emerald: "#EF4444",     // Lighter red compatibility
+          accent: "#F87171",      // Light rose-red accent
+          "accent-hover": "#EF4444",
+          bronze: "#DC2626",
           cream: "#FFFFFF",
           card: "#FFFFFF",
-          border: "rgba(220, 38, 38, 0.15)",
+          border: "rgba(239, 68, 68, 0.15)",
           muted: "#64748B",
         }
       },
@@ -37,14 +38,14 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "red-gradient": "linear-gradient(135deg, #EF4444 0%, #DC2626 50%, #B91C1C 100%)",
-        "gold-gradient": "linear-gradient(135deg, #EF4444 0%, #DC2626 100%)",
+        "red-gradient": "linear-gradient(135deg, #F87171 0%, #EF4444 50%, #DC2626 100%)",
+        "gold-gradient": "linear-gradient(135deg, #F87171 0%, #EF4444 100%)",
         "dark-emerald": "linear-gradient(180deg, #1E293B 0%, #0F172A 100%)",
       },
       boxShadow: {
         'luxury': '0 20px 40px -15px rgba(0, 0, 0, 0.15)',
-        'red-glow': '0 0 25px rgba(220, 38, 38, 0.25)',
-        'gold-glow': '0 0 25px rgba(220, 38, 38, 0.25)',
+        'red-glow': '0 0 25px rgba(239, 68, 68, 0.25)',
+        'gold-glow': '0 0 25px rgba(239, 68, 68, 0.25)',
       }
     },
   },
