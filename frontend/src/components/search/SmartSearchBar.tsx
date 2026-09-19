@@ -30,44 +30,44 @@ export default function SmartSearchBar() {
   };
 
   const quickPills = [
-    "Farmhouse in Chhatarpur under 25 Crore",
-    "Alibaug Beachfront Villa",
-    "Golf Course Road Estate Gurgaon",
-    "Assagao Portuguese Heritage Bungalow",
+    "Single Room AC PG in Kamla Nagar",
+    "2 BHK Flat in Gurgaon under 35k",
+    "Independent House in South Delhi",
+    "Commercial Retail Shop in Noida Sec 18",
   ];
 
   return (
     <div className="w-full max-w-5xl mx-auto -mt-16 relative z-30 px-4 font-sans">
-      <div className="glass-panel-dark p-6 sm:p-8 rounded-2xl shadow-2xl border border-luxury-accent/40">
+      <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-2xl border border-slate-200">
         
         {/* Search Mode Switcher Tabs */}
-        <div className="flex items-center justify-between mb-5 border-b border-luxury-accent/20 pb-4">
+        <div className="flex items-center justify-between mb-5 border-b border-slate-200 pb-4">
           <div className="flex items-center space-x-3">
             <button
               onClick={() => setActiveTab("smart")}
-              className={`px-5 py-2 rounded-lg font-serif text-xs font-bold tracking-widest uppercase flex items-center gap-2 transition-all ${
+              className={`px-5 py-2 rounded-lg font-heading text-xs font-bold tracking-wider uppercase flex items-center gap-2 transition-all ${
                 activeTab === "smart"
-                  ? "bg-gold-gradient text-luxury-dark shadow-gold-glow"
-                  : "text-gray-400 hover:text-white"
+                  ? "bg-red-600 text-white shadow-md"
+                  : "text-slate-600 hover:text-red-600 bg-slate-100"
               }`}
             >
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Concierge AI Natural Search</span>
+              <span>Rental AI Natural Search</span>
             </button>
             <button
               onClick={() => setActiveTab("structured")}
-              className={`px-5 py-2 rounded-lg font-serif text-xs font-bold tracking-widest uppercase flex items-center gap-2 transition-all ${
+              className={`px-5 py-2 rounded-lg font-heading text-xs font-bold tracking-wider uppercase flex items-center gap-2 transition-all ${
                 activeTab === "structured"
-                  ? "bg-gold-gradient text-luxury-dark shadow-gold-glow"
-                  : "text-gray-400 hover:text-white"
+                  ? "bg-red-600 text-white shadow-md"
+                  : "text-slate-600 hover:text-red-600 bg-slate-100"
               }`}
             >
               <SlidersHorizontal className="w-3.5 h-3.5" />
               <span>Structured Filter</span>
             </button>
           </div>
-          <span className="hidden sm:inline-block text-[11px] text-luxury-accent font-serif italic">
-            {activeTab === "smart" ? "Type queries in natural English" : "Filter by exact location & budget"}
+          <span className="hidden sm:inline-block text-[11px] text-red-600 font-heading font-medium">
+            {activeTab === "smart" ? "Type rental query in natural words" : "Filter by exact location, type & rent"}
           </span>
         </div>
 
@@ -76,18 +76,18 @@ export default function SmartSearchBar() {
           <div className="space-y-4">
             <form onSubmit={handleNaturalSearch} className="flex flex-col sm:flex-row items-center gap-3">
               <div className="relative w-full">
-                <Search className="w-5 h-5 text-luxury-accent absolute left-4 top-1/2 -translate-y-1/2" />
+                <Search className="w-5 h-5 text-red-600 absolute left-4 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
                   value={naturalQuery}
                   onChange={(e) => setNaturalQuery(e.target.value)}
-                  placeholder="e.g. 'Farmhouse in Chhatarpur near Delhi under 30 crore with swimming pool'"
-                  className="w-full bg-[#070D0B] border border-luxury-accent/30 focus:border-luxury-accent rounded-xl pl-12 pr-4 py-4 text-sm text-white placeholder-gray-500 focus:outline-none transition-all"
+                  placeholder="e.g. '2 BHK Flat in Gurgaon under 30000 with balcony' or 'Single AC PG in Delhi under 10000'"
+                  className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 rounded-xl pl-12 pr-4 py-4 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white transition-all shadow-sm"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full sm:w-auto px-9 py-4 bg-gold-gradient text-luxury-dark font-serif font-bold text-xs uppercase tracking-widest rounded-xl hover:shadow-gold-glow flex items-center justify-center gap-2 whitespace-nowrap transition-all"
+                className="w-full sm:w-auto px-9 py-4 bg-red-600 hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg flex items-center justify-center gap-2 whitespace-nowrap transition-all"
               >
                 <span>Search</span>
                 <ArrowRight className="w-4 h-4" />
@@ -96,7 +96,7 @@ export default function SmartSearchBar() {
 
             {/* Quick Sample Search Tags */}
             <div className="flex items-center gap-2 flex-wrap pt-1 text-xs">
-              <span className="text-gray-400 font-serif italic text-xs">Frequent Inquiries:</span>
+              <span className="text-slate-500 font-medium text-xs">Popular Searches:</span>
               {quickPills.map((pill, idx) => (
                 <button
                   key={idx}
@@ -104,7 +104,7 @@ export default function SmartSearchBar() {
                     setNaturalQuery(pill);
                     router.push(`/properties?smart_query=${encodeURIComponent(pill)}`);
                   }}
-                  className="px-3 py-1 rounded-full bg-[#0F221D] border border-luxury-accent/20 text-gray-300 hover:text-luxury-accent hover:border-luxury-accent transition-all text-[11px]"
+                  className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:text-red-600 hover:border-red-400 transition-all text-[11px] font-medium"
                 >
                   {pill}
                 </button>
@@ -117,58 +117,56 @@ export default function SmartSearchBar() {
             
             {/* Location Select */}
             <div className="relative">
-              <MapPin className="w-4 h-4 text-luxury-accent absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <MapPin className="w-4 h-4 text-red-600 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                placeholder="City / Locality (e.g. Chhatarpur)"
-                className="w-full bg-[#070D0B] border border-luxury-accent/30 focus:border-luxury-accent rounded-xl pl-10 pr-3 py-3.5 text-xs text-white placeholder-gray-500 focus:outline-none"
+                placeholder="City / Locality (e.g. Kamla Nagar)"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 rounded-xl pl-10 pr-3 py-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none"
               />
             </div>
 
             {/* Property Type Dropdown */}
             <div className="relative">
-              <Home className="w-4 h-4 text-luxury-accent absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Home className="w-4 h-4 text-red-600 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <select
                 value={propertyType}
                 onChange={(e) => setPropertyType(e.target.value)}
-                className="w-full bg-[#070D0B] border border-luxury-accent/30 focus:border-luxury-accent rounded-xl pl-10 pr-3 py-3.5 text-xs text-white focus:outline-none appearance-none"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 rounded-xl pl-10 pr-3 py-3.5 text-xs text-slate-900 focus:outline-none appearance-none"
               >
-                <option value="">All Estate Categories</option>
-                <option value="Farmhouse">Farmhouse</option>
-                <option value="Luxury Bungalow">Heritage Bungalow</option>
-                <option value="Villa">Villa & Coastal Sanctuary</option>
-                <option value="Estate">Gated Estate</option>
-                <option value="Weekend Home">Weekend Retreat</option>
-                <option value="Large Residential Property">Large Residential</option>
+                <option value="">All Rental Types</option>
+                <option value="PG">PG / Co-Living Hostel</option>
+                <option value="Flat">Flat / Apartment</option>
+                <option value="House">Independent House</option>
+                <option value="Shop">Commercial Retail Shop</option>
               </select>
             </div>
 
             {/* Budget Max Price */}
             <div className="relative">
-              <IndianRupee className="w-4 h-4 text-luxury-accent absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <IndianRupee className="w-4 h-4 text-red-600 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <select
                 value={maxPrice}
                 onChange={(e) => setMaxPrice(e.target.value)}
-                className="w-full bg-[#070D0B] border border-luxury-accent/30 focus:border-luxury-accent rounded-xl pl-10 pr-3 py-3.5 text-xs text-white focus:outline-none appearance-none"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 rounded-xl pl-10 pr-3 py-3.5 text-xs text-slate-900 focus:outline-none appearance-none"
               >
-                <option value="">Max Guide Price</option>
-                <option value="30000000">Up to ₹3 Crore</option>
-                <option value="50000000">Up to ₹5 Crore</option>
-                <option value="100000000">Up to ₹10 Crore</option>
-                <option value="250000000">Up to ₹25 Crore</option>
-                <option value="500000000">Up to ₹50 Crore+</option>
+                <option value="">Max Monthly Rent</option>
+                <option value="10000">Up to ₹10,000 / mo</option>
+                <option value="20000">Up to ₹20,000 / mo</option>
+                <option value="35000">Up to ₹35,000 / mo</option>
+                <option value="50000">Up to ₹50,000 / mo</option>
+                <option value="100000">Up to ₹1,00,000+ / mo</option>
               </select>
             </div>
 
             {/* Search Submit */}
             <button
               type="submit"
-              className="w-full py-3.5 bg-gold-gradient text-luxury-dark font-serif font-bold text-xs uppercase tracking-widest rounded-xl hover:shadow-gold-glow flex items-center justify-center gap-2 transition-all"
+              className="w-full py-3.5 bg-red-600 hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition-all"
             >
               <Compass className="w-4 h-4" />
-              <span>Explore</span>
+              <span>Find Rentals</span>
             </button>
           </form>
         )}

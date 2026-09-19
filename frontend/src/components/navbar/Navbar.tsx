@@ -15,86 +15,90 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 shadow-md">
       
-      {/* 1. Top Announcement Header Bar (Vibrant Royal Sapphire Navy) */}
-      <div className="bg-[#1A365D] py-2.5 px-4 text-xs text-slate-100 font-sans hidden md:block border-b border-blue-900/60">
+      {/* 1. Top Announcement Header Bar (Clean Crimson Red & Crisp White) */}
+      <div className="bg-red-600 py-2.5 px-4 text-xs text-white font-sans hidden md:block border-b border-red-700">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-6">
-            <a href="tel:+919876543210" className="hover:text-amber-400 flex items-center gap-1.5 transition-colors">
-              <Phone className="w-3.5 h-3.5 text-amber-400" />
+            <a href="tel:+919876543210" className="hover:text-red-100 flex items-center gap-1.5 transition-colors font-medium">
+              <Phone className="w-3.5 h-3.5 text-white" />
               <span>+91 98765 43210</span>
             </a>
-            <span className="text-slate-600">|</span>
-            <a href="mailto:concierge@haveliestates.in" className="hover:text-amber-400 flex items-center gap-1.5 transition-colors">
-              <Mail className="w-3.5 h-3.5 text-amber-400" />
-              <span>concierge@haveliestates.in</span>
+            <span className="text-red-300">|</span>
+            <a href="mailto:support@rented.in" className="hover:text-red-100 flex items-center gap-1.5 transition-colors font-medium">
+              <Mail className="w-3.5 h-3.5 text-white" />
+              <span>support@rented.in</span>
             </a>
-            <span className="text-slate-600">|</span>
-            <span className="flex items-center gap-1.5 text-slate-300">
-              <Clock className="w-3.5 h-3.5 text-amber-400" />
-              <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+            <span className="text-red-300">|</span>
+            <span className="flex items-center gap-1.5 text-red-100">
+              <Clock className="w-3.5 h-3.5 text-white" />
+              <span>24/7 Verified Rental Support</span>
             </span>
           </div>
 
           <div className="flex items-center space-x-6">
-            <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>100% Verified Title Deeds</span>
+            <span className="flex items-center gap-1.5 text-white font-medium bg-red-700/60 px-2 py-0.5 rounded">
+              <ShieldCheck className="w-4 h-4 text-white" />
+              <span>100% Verified Owners & Zero Brokerage Options</span>
             </span>
-            <span className="text-slate-600">|</span>
-            <div className="flex items-center gap-2 text-amber-400 font-semibold">
-              <MapPin className="w-3.5 h-3.5" />
-              <span>Delhi NCR • Gurgaon • Alibaug • Goa • Lonavala</span>
+            <span className="text-red-300">|</span>
+            <div className="flex items-center gap-2 text-white font-semibold">
+              <MapPin className="w-3.5 h-3.5 text-red-200" />
+              <span>Delhi NCR • Gurgaon • Noida • Bangalore • Mumbai • Pune</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 2. Main Crisp White Bosa Navbar */}
+      {/* 2. Main Crisp White Navbar */}
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             
             {/* Brand Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-11 h-11 rounded-xl bosa-gradient-bg p-0.5 shadow-md flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                <div className="w-full h-full bg-[#1A365D] rounded-[10px] flex items-center justify-center">
-                  <Building2 className="w-6 h-6 text-amber-400" />
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-red-500 to-red-700 p-0.5 shadow-md flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-full h-full bg-red-600 rounded-[10px] flex items-center justify-center">
+                  <Building2 className="w-6 h-6 text-white" />
                 </div>
               </div>
               <div>
                 <span className="font-heading text-2xl font-extrabold tracking-tight text-slate-900 block leading-none">
-                  HAVELI <span className="bosa-gradient-text">&</span> ESTATES
+                  RENTED<span className="text-red-600">.</span>
                 </span>
-                <span className="text-[10px] tracking-widest text-emerald-800 uppercase font-sans font-bold block mt-1">
-                  Real Estate Group India
+                <span className="text-[10px] tracking-widest text-red-600 uppercase font-sans font-bold block mt-1">
+                  PG • House • Flat • Shop
                 </span>
               </div>
             </Link>
 
             {/* Desktop Navigation Links */}
             <nav className="hidden lg:flex items-center space-x-8 font-heading text-sm font-bold tracking-wide">
-              <Link href="/" className="text-emerald-800 hover:text-emerald-950 transition-colors">
+              <Link href="/" className="text-red-600 hover:text-red-700 transition-colors">
                 Home
               </Link>
 
-              <Link href="/properties" className="text-slate-800 hover:text-emerald-800 transition-colors flex items-center gap-1">
-                <span>Explore Properties</span>
+              <Link href="/properties" className="text-slate-800 hover:text-red-600 transition-colors flex items-center gap-1">
+                <span>All Rentals</span>
               </Link>
 
-              <Link href="/farmhouses" className="text-slate-800 hover:text-emerald-800 transition-colors">
-                Farmhouses
+              <Link href="/properties?property_type=PG" className="text-slate-800 hover:text-red-600 transition-colors">
+                PG / Hostels
               </Link>
 
-              <Link href="/bungalows" className="text-slate-800 hover:text-emerald-800 transition-colors">
-                Bungalows
+              <Link href="/properties?property_type=Flat" className="text-slate-800 hover:text-red-600 transition-colors">
+                Flats
               </Link>
 
-              <Link href="/villas" className="text-slate-800 hover:text-emerald-800 transition-colors">
-                Villas
+              <Link href="/properties?property_type=House" className="text-slate-800 hover:text-red-600 transition-colors">
+                Houses
               </Link>
 
-              <Link href="/favorites" className="text-slate-800 hover:text-emerald-800 transition-colors flex items-center gap-1.5">
-                <Heart className="w-4 h-4 text-emerald-700" />
+              <Link href="/properties?property_type=Shop" className="text-slate-800 hover:text-red-600 transition-colors">
+                Shops
+              </Link>
+
+              <Link href="/favorites" className="text-slate-800 hover:text-red-600 transition-colors flex items-center gap-1.5">
+                <Heart className="w-4 h-4 text-red-600" />
                 <span>Saved</span>
               </Link>
             </nav>
@@ -103,10 +107,10 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center space-x-4">
               <Link
                 href="/sell"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bosa-gradient-bg text-white font-heading font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg hover:opacity-95 transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
               >
                 <PlusCircle className="w-4 h-4" />
-                <span>Submit Property</span>
+                <span>Post Rental</span>
               </Link>
 
               {isAuthenticated ? (
@@ -115,12 +119,12 @@ export default function Navbar() {
                     href={isAdmin ? "/admin" : "/dashboard"}
                     className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-900 hover:bg-slate-200 transition-all text-xs font-semibold"
                   >
-                    <UserIcon className="w-4 h-4 text-emerald-700" />
+                    <UserIcon className="w-4 h-4 text-red-600" />
                     <span>{user?.full_name?.split(" ")[0]} ({user?.role})</span>
                   </Link>
                   <button
                     onClick={logout}
-                    className="text-xs text-slate-500 hover:text-emerald-800 transition-colors font-medium"
+                    className="text-xs text-slate-500 hover:text-red-600 transition-colors font-medium"
                   >
                     Sign Out
                   </button>
@@ -139,7 +143,7 @@ export default function Navbar() {
             <div className="lg:hidden flex items-center">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-slate-700 hover:text-emerald-800"
+                className="p-2 text-slate-700 hover:text-red-600"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -151,26 +155,29 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-slate-200 px-6 pt-4 pb-8 space-y-4 font-heading shadow-xl">
-          <Link href="/" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-emerald-800 font-bold">
+          <Link href="/" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-red-600 font-bold">
             Home
           </Link>
           <Link href="/properties" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
-            Explore All Properties
+            All Rentals
           </Link>
-          <Link href="/farmhouses" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
-            Farmhouses
+          <Link href="/properties?property_type=PG" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
+            PG / Hostels
           </Link>
-          <Link href="/bungalows" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
-            Luxury Bungalows
+          <Link href="/properties?property_type=Flat" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
+            Flats & Apartments
           </Link>
-          <Link href="/villas" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
-            Coastal & Hill Villas
+          <Link href="/properties?property_type=House" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
+            Independent Houses
+          </Link>
+          <Link href="/properties?property_type=Shop" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
+            Commercial Shops
           </Link>
           <Link href="/favorites" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
             Saved Properties
           </Link>
-          <Link href="/sell" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-emerald-800 font-bold">
-            + Submit Property
+          <Link href="/sell" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-red-600 font-bold">
+            + Post Rental
           </Link>
           {isAuthenticated ? (
             <div className="pt-4 border-t border-slate-200 space-y-2 font-sans">
@@ -182,7 +189,7 @@ export default function Navbar() {
               </button>
             </div>
           ) : (
-            <Link href="/login" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center py-3 rounded-xl bosa-gradient-bg text-white font-bold text-xs uppercase tracking-wider mt-4">
+            <Link href="/login" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center py-3 rounded-xl bg-red-600 text-white font-bold text-xs uppercase tracking-wider mt-4">
               Sign In
             </Link>
           )}

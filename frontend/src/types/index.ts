@@ -1,6 +1,11 @@
 export type UserRole = "BUYER" | "SELLER" | "ADMIN";
 
 export type PropertyType =
+  | "PG"
+  | "House"
+  | "Flat"
+  | "Shop"
+  | "Commercial"
   | "Farmhouse"
   | "Luxury Bungalow"
   | "Villa"
@@ -10,7 +15,7 @@ export type PropertyType =
 
 export type LandAreaUnit = "sqft" | "sqyd" | "acre" | "bigha";
 
-export type PropertyStatus = "AVAILABLE" | "UNDER_OFFER" | "SOLD";
+export type PropertyStatus = "AVAILABLE" | "UNDER_OFFER" | "SOLD" | "RENTED";
 
 export type VerificationStatus = "PENDING" | "VERIFIED" | "REJECTED";
 
@@ -22,6 +27,9 @@ export interface User {
   full_name: string;
   phone?: string;
   role: UserRole;
+  city?: string;
+  state?: string;
+  pincode?: string;
   is_verified: boolean;
   created_at: string;
 }

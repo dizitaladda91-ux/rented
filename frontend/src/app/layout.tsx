@@ -3,9 +3,9 @@ import "@/app/globals.css";
 import { AuthProvider } from "@/lib/auth";
 
 export const metadata: Metadata = {
-  title: "Haveli & Estates | Luxury Farmhouse & Bungalow Marketplace India",
-  description: "Discover exceptional farmhouses, luxury bungalows, hilltop estates, and beachfront villas across India. Verified listings, 360° virtual tours, and private site visit bookings.",
-  keywords: ["Farmhouse for sale", "Luxury Bungalow India", "Chhatarpur Farmhouse", "Alibaug Villa", "Goa Estate", "Haveli & Estates"],
+  title: "RENTED | PG, House, Flat & Shop Rental Marketplace India",
+  description: "Find and rent verified PGs, Hostels, Flats, Independent Houses, and Commercial Shops across Delhi NCR, Bangalore, Mumbai, Pune & Hyderabad. Direct landlord connect, zero brokerage.",
+  keywords: ["PG for rent", "Flat for rent", "House for rent", "Shop for rent", "Co-living PG", "RENTED", "Zero Brokerage Rentals"],
 };
 
 export default function RootLayout({
@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="bg-luxury-dark text-white font-sans antialiased">
+    <html lang="en">
+      <body className="bg-white text-gray-900 font-sans antialiased selection:bg-red-600 selection:text-white">
         <AuthProvider>
           {children}
         </AuthProvider>

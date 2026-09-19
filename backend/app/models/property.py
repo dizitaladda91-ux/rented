@@ -7,6 +7,11 @@ from app.core.database import Base
 
 
 class PropertyType(str, PyEnum):
+    PG = "PG"
+    HOUSE = "House"
+    FLAT = "Flat"
+    SHOP = "Shop"
+    COMMERCIAL = "Commercial"
     FARMHOUSE = "Farmhouse"
     LUXURY_BUNGALOW = "Luxury Bungalow"
     VILLA = "Villa"
@@ -24,6 +29,7 @@ class LandAreaUnit(str, PyEnum):
 
 class PropertyStatus(str, PyEnum):
     AVAILABLE = "AVAILABLE"
+    RENTED = "RENTED"
     UNDER_OFFER = "UNDER_OFFER"
     SOLD = "SOLD"
 

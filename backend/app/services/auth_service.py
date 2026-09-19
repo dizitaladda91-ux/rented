@@ -24,6 +24,9 @@ class AuthService:
             hashed_password=hashed_pwd,
             full_name=user_in.full_name,
             phone=user_in.phone,
+            city=user_in.city,
+            state=user_in.state,
+            pincode=user_in.pincode,
             role=UserRole.BUYER,
             is_verified=False,
             is_active=True

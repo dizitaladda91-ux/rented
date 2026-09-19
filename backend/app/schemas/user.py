@@ -9,6 +9,9 @@ class UserBase(BaseModel):
     full_name: str
     phone: Optional[str] = None
     role: UserRole = UserRole.BUYER
+    city: Optional[str] = None
+    state: Optional[str] = None
+    pincode: Optional[str] = None
 
 
 class UserCreate(UserBase):
@@ -21,6 +24,9 @@ class UserUpdate(BaseModel):
     full_name: Optional[str] = None
     phone: Optional[str] = None
     email: Optional[EmailStr] = None
+    city: Optional[str] = None
+    state: Optional[str] = None
+    pincode: Optional[str] = None
 
 
 class UserResponse(UserBase):

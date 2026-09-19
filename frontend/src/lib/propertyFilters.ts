@@ -15,6 +15,7 @@ export interface PropertyFilterParams {
   max_land_area?: number | string;
   land_area_unit?: string;
   verification_status?: string;
+  pincode?: string;
   sort_by?: string;
 }
 
@@ -77,6 +78,12 @@ export function parseSmartQuery(queryStr: string): Partial<PropertyFilterParams>
     params.bedrooms = bedMatch[1];
   }
 
+  // 5. 6-digit Pincode match
+  const pinMatch = q.match(/\b(\d{6})\b/);
+  if (pinMatch) {
+    params.pincode = pinMatch[1];
+  }
+
   return params;
 }
 
@@ -92,6 +99,7 @@ function matchesLocation(prop: Property, searchLoc: string): boolean {
   const state = (prop.location?.state || "").toLowerCase();
   const locality = (prop.location?.locality || "").toLowerCase();
   const address = (prop.location?.address || "").toLowerCase();
+  const pincode = (prop.location?.pincode || "").toLowerCase();
   const title = (prop.title || "").toLowerCase();
   const desc = (prop.description || "").toLowerCase();
 
@@ -101,6 +109,7 @@ function matchesLocation(prop: Property, searchLoc: string): boolean {
     locality.includes(needle) ||
     state.includes(needle) ||
     address.includes(needle) ||
+    pincode.includes(needle) ||
     title.includes(needle) ||
     desc.includes(needle)
   ) {
@@ -238,6 +247,17 @@ export function filterPropertyList(
 
       if (!titleMatch && !descMatch && !cityMatch && !localityMatch && !stateMatch && !typeMatch && !amenityMatch) {
         return false;
+      }
+    }
+
+    // 10. Pincode Filter (Exact 6-digit or regional 3-digit prefix)
+    if (effectiveFilters.pincode && effectiveFilters.pincode.trim()) {
+      const targetPin = effectiveFilters.pincode.trim();
+      const propPin = (prop.location?.pincode || "").trim();
+      if (propPin) {
+        if (propPin !== targetPin && propPin.slice(0, 3) !== targetPin.slice(0, 3)) {
+          return false;
+        }
       }
     }
 
