@@ -108,7 +108,7 @@ export default function HeroBosa() {
         </div>
 
         <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight">
-          Find & Rent <span className="gold-gradient-text">PG, Flat, House & Shop</span>
+          Find & Rent <span className="boss-glas-dark">PG, Flat, House & Shop</span>
         </h1>
 
         <p className="font-sans text-base sm:text-xl text-slate-200 max-w-3xl mx-auto font-light leading-relaxed mt-4">
@@ -135,7 +135,7 @@ export default function HeroBosa() {
                 : "bg-slate-900/80 text-slate-300 border border-slate-700 hover:text-white"
             }`}
           >
-            ✨ AI Natural Query
+            AI Natural Query
           </button>
         </div>
       </div>
@@ -201,7 +201,7 @@ export default function HeroBosa() {
                         >
                           <div className="flex items-center gap-2">
                             <Sparkles className="w-3.5 h-3.5 text-red-400 flex-shrink-0" />
-                            <span>📍 Near You: {user.city} {user.pincode ? `(${user.pincode})` : ""}</span>
+                            <span>Near You: {user.city} {user.pincode ? `(${user.pincode})` : ""}</span>
                           </div>
                           <span className="text-[9px] bg-red-400 text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
                             My Area
