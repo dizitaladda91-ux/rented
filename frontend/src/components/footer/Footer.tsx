@@ -119,7 +119,7 @@ export default function Footer() {
           <div className="flex items-center space-x-6">
             <Link href="/privacy" className="text-black hover:text-red-400 transition-colors font-medium">Privacy Policy</Link>
             <Link href="/terms" className="text-black hover:text-red-400 transition-colors font-medium">Terms of Service</Link>
-            <Link href="/admin" className="text-red-500 hover:text-red-600 bg-red-50 border border-red-200 px-2.5 py-1 rounded-md font-bold transition-all shadow-sm">
+            <Link href="/.admin" className="text-red-500 hover:text-red-600 bg-red-50 border border-red-200 px-2.5 py-1 rounded-md font-bold transition-all shadow-sm">
               Admin Portal
             </Link>
           </div>

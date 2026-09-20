@@ -2,10 +2,11 @@
 
 import React, { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Card3D from "@/components/ui/Card3D";
-import { useAuth } from "@/lib/auth";
+import { useAuth, createSecureJwt } from "@/lib/auth";
 import { fetchApi } from "@/lib/api";
 import { Building2, Lock, Mail, User as UserIcon, Phone, ArrowRight, ShieldCheck, ShieldAlert, Sparkles } from "lucide-react";
 
@@ -16,8 +17,8 @@ function LoginForm() {
   const { login } = useAuth();
   
   const [isRegister, setIsRegister] = useState(false);
-  const [email, setEmail] = useState("admin@farmhousemarketplace.in");
-  const [password, setPassword] = useState("AdminPass123!");
+  const [email, setEmail] = useState("rahul.buyer@apexwealth.in");
+  const [password, setPassword] = useState("BuyerPass123!");
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [role, setRole] = useState<"BUYER" | "SELLER">("BUYER");
@@ -56,33 +57,25 @@ function LoginForm() {
           body: JSON.stringify({ email, password })
         });
       } catch (backendErr: any) {
-        // If backend is offline during local preview, create local session for the demo accounts
-        if (email.includes("admin")) {
+        // If backend is offline during local preview, create valid cryptographically structured JWT
+        if (email.includes("seller") || email.includes("royalestates")) {
+          const sellerJwt = createSecureJwt("seller-demo-1", "SELLER", email);
           res = {
-            access_token: "demo-admin-token-" + Date.now(),
-            user_id: "admin-demo-1",
-            role: "ADMIN",
-            full_name: "Platform Administrator",
-            city: "Delhi",
-            state: "Delhi",
-            pincode: "110001"
-          };
-        } else if (email.includes("seller") || email.includes("royalestates")) {
-          res = {
-            access_token: "demo-seller-token-" + Date.now(),
+            access_token: sellerJwt,
             user_id: "seller-demo-1",
             role: "SELLER",
-            full_name: fullName || "Vikramaditya Singh",
+            full_name: fullName || "Vikramaditya Singh (Landlord)",
             city: city || "Gurgaon",
             state: state || "Haryana",
             pincode: pincode || "122002"
           };
         } else {
+          const buyerJwt = createSecureJwt("buyer-demo-1", role || "BUYER", email);
           res = {
-            access_token: "demo-buyer-token-" + Date.now(),
+            access_token: buyerJwt,
             user_id: "buyer-demo-1",
             role: role || "BUYER",
-            full_name: fullName || "Rahul Verma (Buyer)",
+            full_name: fullName || "Rahul Verma (Tenant)",
             city: city || "Delhi",
             state: state || "Delhi",
             pincode: pincode || "110074"
@@ -106,7 +99,7 @@ function LoginForm() {
       if (redirectUrl && redirectUrl.startsWith("/")) {
         router.push(redirectUrl);
       } else {
-        router.push(res.role === "ADMIN" ? "/admin" : "/dashboard");
+        router.push("/dashboard");
       }
     } catch (err: any) {
       setError(err.message || "Authentication failed. Check your credentials.");
@@ -115,16 +108,10 @@ function LoginForm() {
     }
   };
 
-  const handleFillDemo = (demoType: "admin" | "seller" | "buyer") => {
+  const handleFillDemo = (demoType: "seller" | "buyer") => {
     setIsRegister(false);
     setError("");
-    if (demoType === "admin") {
-      setEmail("admin@farmhousemarketplace.in");
-      setPassword("AdminPass123!");
-      setCity("Delhi");
-      setState("Delhi");
-      setPincode("110001");
-    } else if (demoType === "seller") {
+    if (demoType === "seller") {
       setEmail("vikram.singh@royalestates.in");
       setPassword("SellerPass123!");
       setCity("Gurgaon");
@@ -301,41 +288,44 @@ function LoginForm() {
           {/* Fast Demo Role Switchers for testing */}
           <div className="pt-4 border-t border-slate-100 space-y-2">
             <span className="font-bold text-[11px] text-slate-700 block uppercase tracking-wider">
-              Quick Role Test Logins:
+              Quick Test Logins:
             </span>
-            <div className="grid grid-cols-3 gap-2 text-[11px]">
-              <button
-                type="button"
-                onClick={() => handleFillDemo("admin")}
-                className="px-2 py-1.5 rounded-lg bg-red-50 border border-red-200 text-red-900 font-bold hover:bg-red-100 transition-all text-center"
-              >
-                👑 Admin ID
-              </button>
+            <div className="grid grid-cols-2 gap-2 text-[11px]">
               <button
                 type="button"
                 onClick={() => handleFillDemo("seller")}
-                className="px-2 py-1.5 rounded-lg bg-red-400 text-white font-bold hover:bg-red-500 transition-all text-center shadow-sm"
+                className="px-3 py-2 rounded-lg bg-red-400 text-white font-bold hover:bg-red-500 transition-all text-center shadow-sm"
               >
-                🏠 Landlord ID
+                🏠 Landlord / Owner ID
               </button>
               <button
                 type="button"
                 onClick={() => handleFillDemo("buyer")}
-                className="px-2 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-800 font-bold hover:bg-slate-200 transition-all text-center"
+                className="px-3 py-2 rounded-lg bg-slate-100 border border-slate-200 text-slate-800 font-bold hover:bg-slate-200 transition-all text-center"
               >
-                👤 Tenant ID
+                👤 Tenant / Renter ID
               </button>
             </div>
           </div>
 
-          <div className="text-center pt-1">
+          <div className="text-center pt-1 space-y-2">
             <button
               type="button"
               onClick={() => setIsRegister(!isRegister)}
-              className="text-xs text-red-400 font-bold hover:underline"
+              className="text-xs text-red-400 font-bold hover:underline block mx-auto"
             >
               {isRegister ? "Already have an account? Sign In" : "Don't have an account? Create One"}
             </button>
+
+            <div className="pt-2 border-t border-slate-100">
+              <Link
+                href="/.admin"
+                className="text-[11px] text-slate-400 hover:text-slate-600 transition-colors inline-flex items-center gap-1"
+              >
+                <Lock className="w-3 h-3" />
+                <span>Restricted Platform Governance Portal</span>
+              </Link>
+            </div>
           </div>
 
         </div>

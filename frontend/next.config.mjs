@@ -19,6 +19,18 @@ const nextConfig = {
       }
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/.admin',
+        destination: '/admin/login',
+      },
+      {
+        source: '/.admin/:path*',
+        destination: '/admin/login',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
