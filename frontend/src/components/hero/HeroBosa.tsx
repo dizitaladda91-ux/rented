@@ -96,14 +96,14 @@ export default function HeroBosa() {
           priority
           className="object-cover filter brightness-105 contrast-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-red-950/85 via-[#0F172A]/70 to-[#0F172A]/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/60 to-[#0F172A]/40" />
       </div>
 
       {/* Hero Central Headline */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
         
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/20 border border-red-500/30 text-xs font-semibold text-red-300 uppercase tracking-widest mb-6 backdrop-blur-md shadow-sm">
-          <Sparkles className="w-3.5 h-3.5 text-red-400" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-red-300/40 text-xs font-semibold text-red-200 uppercase tracking-widest mb-6 backdrop-blur-md shadow-sm">
+          <Sparkles className="w-3.5 h-3.5 text-red-300" />
           <span>India’s Verified Rental Marketplace</span>
         </div>
 
@@ -121,7 +121,7 @@ export default function HeroBosa() {
             onClick={() => setSearchMode("structured")}
             className={`px-4 py-1.5 rounded-lg transition-all ${
               searchMode === "structured"
-                ? "bg-red-500 text-white font-bold shadow-md"
+                ? "bg-red-400 text-white font-bold shadow-md"
                 : "bg-slate-900/80 text-slate-300 border border-slate-700 hover:text-white"
             }`}
           >
@@ -131,7 +131,7 @@ export default function HeroBosa() {
             onClick={() => setSearchMode("smart")}
             className={`px-4 py-1.5 rounded-lg transition-all ${
               searchMode === "smart"
-                ? "bg-red-500 text-white font-bold shadow-md"
+                ? "bg-red-400 text-white font-bold shadow-md"
                 : "bg-slate-900/80 text-slate-300 border border-slate-700 hover:text-white"
             }`}
           >
@@ -142,19 +142,19 @@ export default function HeroBosa() {
 
       {/* 3D Animated Floating Property Search Dock */}
       <div className="relative z-40 max-w-6xl mx-auto px-4 w-full mt-10">
-        <div className="relative rounded-3xl p-1.5 bg-gradient-to-b from-white via-white/95 to-red-400/30 shadow-[0_30px_70px_-15px_rgba(15,23,42,0.35),0_10px_25px_-5px_rgba(239,68,68,0.2)] hover:shadow-[0_35px_80px_-10px_rgba(239,68,68,0.25)] hover:-translate-y-1 transition-all duration-300 border border-white/90">
+        <div className="relative rounded-3xl p-1.5 bg-gradient-to-b from-white via-white/95 to-red-400/30 shadow-[0_30px_70px_-15px_rgba(15,23,42,0.35),0_10px_25px_-5px_rgba(248,113,113,0.2)] hover:shadow-[0_35px_80px_-10px_rgba(248,113,113,0.25)] hover:-translate-y-1 transition-all duration-300 border border-white/90">
           <div className="bg-white p-5 sm:p-7 rounded-[22px] border border-slate-100 shadow-inner">
             
             {/* Top Meta Info Bar */}
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
                 <span className="text-xs font-heading font-bold text-slate-800 uppercase tracking-wider">
                   Instant Multi-Filter Search
                 </span>
               </div>
-              <div className="flex items-center gap-1.5 text-xs text-red-600 font-semibold bg-red-50 px-3 py-1 rounded-full border border-red-200 shadow-sm">
-                <ShieldCheck className="w-4 h-4 text-red-500" />
+              <div className="flex items-center gap-1.5 text-xs text-red-500 font-semibold bg-red-50 px-3 py-1 rounded-full border border-red-200 shadow-sm">
+                <ShieldCheck className="w-4 h-4 text-red-400" />
                 <span>Verified Listings Only</span>
               </div>
             </div>
@@ -168,15 +168,15 @@ export default function HeroBosa() {
                   ref={locationRef}
                   className={`group relative bg-slate-50/90 hover:bg-white border rounded-2xl p-2.5 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer ${
                     showLocationMenu
-                      ? "border-red-500 bg-white ring-2 ring-red-500/10 -translate-y-1 shadow-md"
-                      : "border-slate-200/90 hover:border-red-500 hover:-translate-y-1"
+                      ? "border-red-400 bg-white ring-2 ring-red-400/10 -translate-y-1 shadow-md"
+                      : "border-slate-200/90 hover:border-red-400 hover:-translate-y-1"
                   }`}
                 >
                   <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block px-1 mb-0.5">
                     Location
                   </label>
                   <div className="flex items-center px-1">
-                    <MapPin className="w-4 h-4 text-red-500 flex-shrink-0 mr-2 group-hover:scale-110 transition-transform" />
+                    <MapPin className="w-4 h-4 text-red-400 flex-shrink-0 mr-2 group-hover:scale-110 transition-transform" />
                     <input
                       type="text"
                       value={location}
@@ -200,10 +200,10 @@ export default function HeroBosa() {
                           className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs bg-red-50 text-red-950 border border-red-200 hover:bg-red-100 cursor-pointer transition-all mb-2 font-bold shadow-sm"
                         >
                           <div className="flex items-center gap-2">
-                            <Sparkles className="w-3.5 h-3.5 text-red-500 flex-shrink-0" />
+                            <Sparkles className="w-3.5 h-3.5 text-red-400 flex-shrink-0" />
                             <span>📍 Near You: {user.city} {user.pincode ? `(${user.pincode})` : ""}</span>
                           </div>
-                          <span className="text-[9px] bg-red-500 text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                          <span className="text-[9px] bg-red-400 text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
                             My Area
                           </span>
                         </div>
@@ -220,10 +220,10 @@ export default function HeroBosa() {
                               setLocation(loc.query);
                               setShowLocationMenu(false);
                             }}
-                            className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs hover:bg-slate-100 hover:text-red-500 hover:pl-4.5 cursor-pointer transition-all duration-150 font-semibold text-slate-900"
+                            className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs hover:bg-slate-100 hover:text-red-400 hover:pl-4.5 cursor-pointer transition-all duration-150 font-semibold text-slate-900"
                           >
                             <div className="flex items-center gap-2">
-                              <MapPin className="w-3.5 h-3.5 text-red-500 flex-shrink-0" />
+                              <MapPin className="w-3.5 h-3.5 text-red-400 flex-shrink-0" />
                               <span>{loc.name}</span>
                             </div>
                             <span className="text-[10px] text-slate-400 font-normal ml-3">{loc.region}</span>
@@ -237,7 +237,7 @@ export default function HeroBosa() {
                 {/* 2. Custom Property Type Dropdown */}
                 <LuxuryDropdown
                   label="Property Type"
-                  icon={<Home className="w-4 h-4 text-red-500" />}
+                  icon={<Home className="w-4 h-4 text-red-400" />}
                   value={propertyType}
                   placeholder="All Property Types"
                   options={propertyTypeOptions}
@@ -247,7 +247,7 @@ export default function HeroBosa() {
                 {/* 3. Custom Max Budget Dropdown */}
                 <LuxuryDropdown
                   label="Budget Range"
-                  icon={<IndianRupee className="w-4 h-4 text-red-500" />}
+                  icon={<IndianRupee className="w-4 h-4 text-red-400" />}
                   value={maxPrice}
                   placeholder="Max Budget (Any)"
                   options={budgetOptions}
@@ -257,7 +257,7 @@ export default function HeroBosa() {
                 {/* 4. Custom Bedrooms Dropdown */}
                 <LuxuryDropdown
                   label="Bedrooms"
-                  icon={<Bed className="w-4 h-4 text-red-500" />}
+                  icon={<Bed className="w-4 h-4 text-red-400" />}
                   value={bedrooms}
                   placeholder="Bedrooms (Any)"
                   options={bedroomOptions}
@@ -268,7 +268,7 @@ export default function HeroBosa() {
                 <div className="flex items-end">
                   <button
                     type="submit"
-                    className="relative group overflow-hidden w-full h-[58px] bg-red-500 hover:bg-red-600 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-2xl shadow-[0_10px_25px_rgba(239,68,68,0.3)] hover:shadow-[0_15px_35px_rgba(239,68,68,0.4)] hover:-translate-y-1 active:translate-y-0.5 active:shadow-inner transition-all duration-300 flex items-center justify-center gap-2.5"
+                    className="relative group overflow-hidden w-full h-[58px] bg-red-400 hover:bg-red-500 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-2xl shadow-[0_10px_25px_rgba(248,113,113,0.3)] hover:shadow-[0_15px_35px_rgba(248,113,113,0.4)] hover:-translate-y-1 active:translate-y-0.5 active:shadow-inner transition-all duration-300 flex items-center justify-center gap-2.5"
                   >
                     {/* 3D Shimmer Beam */}
                     <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
@@ -282,18 +282,18 @@ export default function HeroBosa() {
               /* AI Natural Query Bar */
               <form onSubmit={handleSearch} className="flex flex-col sm:flex-row items-center gap-3">
                 <div className="relative w-full group">
-                  <Sparkles className="w-5 h-5 text-red-500 absolute left-4 top-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform" />
+                  <Sparkles className="w-5 h-5 text-red-400 absolute left-4 top-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform" />
                   <input
                     type="text"
                     value={naturalQuery}
                     onChange={(e) => setNaturalQuery(e.target.value)}
                     placeholder="e.g. '2 BHK Flat in Gurgaon under 30000 with balcony' or 'Single AC PG in Delhi under 10000'"
-                    className="w-full bg-slate-50 border border-slate-200 focus:border-red-500 rounded-2xl pl-12 pr-4 py-4 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white shadow-sm hover:shadow-md transition-all"
+                    className="w-full bg-slate-50 border border-slate-200 focus:border-red-400 rounded-2xl pl-12 pr-4 py-4 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white shadow-sm hover:shadow-md transition-all"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-4 bg-red-500 hover:bg-red-600 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-2xl hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 whitespace-nowrap shadow-md"
+                  className="w-full sm:w-auto px-8 py-4 bg-red-400 hover:bg-red-500 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-2xl hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 whitespace-nowrap shadow-md"
                 >
                   <span>Search</span>
                   <ArrowRight className="w-4 h-4" />

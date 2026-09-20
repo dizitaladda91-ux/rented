@@ -47,8 +47,8 @@ export default function SmartSearchBar() {
               onClick={() => setActiveTab("smart")}
               className={`px-5 py-2 rounded-lg font-heading text-xs font-bold tracking-wider uppercase flex items-center gap-2 transition-all ${
                 activeTab === "smart"
-                  ? "bg-red-600 text-white shadow-md"
-                  : "text-slate-600 hover:text-red-600 bg-slate-100"
+                  ? "bg-red-400 text-white shadow-md"
+                  : "text-slate-600 hover:text-red-400 bg-slate-100"
               }`}
             >
               <Sparkles className="w-3.5 h-3.5" />
@@ -58,15 +58,15 @@ export default function SmartSearchBar() {
               onClick={() => setActiveTab("structured")}
               className={`px-5 py-2 rounded-lg font-heading text-xs font-bold tracking-wider uppercase flex items-center gap-2 transition-all ${
                 activeTab === "structured"
-                  ? "bg-red-600 text-white shadow-md"
-                  : "text-slate-600 hover:text-red-600 bg-slate-100"
+                  ? "bg-red-400 text-white shadow-md"
+                  : "text-slate-600 hover:text-red-400 bg-slate-100"
               }`}
             >
               <SlidersHorizontal className="w-3.5 h-3.5" />
               <span>Structured Filter</span>
             </button>
           </div>
-          <span className="hidden sm:inline-block text-[11px] text-red-600 font-heading font-medium">
+          <span className="hidden sm:inline-block text-[11px] text-red-400 font-heading font-medium">
             {activeTab === "smart" ? "Type rental query in natural words" : "Filter by exact location, type & rent"}
           </span>
         </div>
@@ -76,18 +76,18 @@ export default function SmartSearchBar() {
           <div className="space-y-4">
             <form onSubmit={handleNaturalSearch} className="flex flex-col sm:flex-row items-center gap-3">
               <div className="relative w-full">
-                <Search className="w-5 h-5 text-red-600 absolute left-4 top-1/2 -translate-y-1/2" />
+                <Search className="w-5 h-5 text-red-400 absolute left-4 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
                   value={naturalQuery}
                   onChange={(e) => setNaturalQuery(e.target.value)}
                   placeholder="e.g. '2 BHK Flat in Gurgaon under 30000 with balcony' or 'Single AC PG in Delhi under 10000'"
-                  className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 rounded-xl pl-12 pr-4 py-4 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white transition-all shadow-sm"
+                  className="w-full bg-slate-50 border border-slate-200 focus:border-red-400 rounded-xl pl-12 pr-4 py-4 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white transition-all shadow-sm"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full sm:w-auto px-9 py-4 bg-red-600 hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg flex items-center justify-center gap-2 whitespace-nowrap transition-all"
+                className="w-full sm:w-auto px-9 py-4 bg-red-400 hover:bg-red-500 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg flex items-center justify-center gap-2 whitespace-nowrap transition-all"
               >
                 <span>Search</span>
                 <ArrowRight className="w-4 h-4" />
@@ -104,7 +104,7 @@ export default function SmartSearchBar() {
                     setNaturalQuery(pill);
                     router.push(`/properties?smart_query=${encodeURIComponent(pill)}`);
                   }}
-                  className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:text-red-600 hover:border-red-400 transition-all text-[11px] font-medium"
+                  className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:text-red-400 hover:border-red-300 transition-all text-[11px] font-medium"
                 >
                   {pill}
                 </button>
@@ -117,23 +117,23 @@ export default function SmartSearchBar() {
             
             {/* Location Select */}
             <div className="relative">
-              <MapPin className="w-4 h-4 text-red-600 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <MapPin className="w-4 h-4 text-red-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 placeholder="City / Locality (e.g. Kamla Nagar)"
-                className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 rounded-xl pl-10 pr-3 py-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-red-400 rounded-xl pl-10 pr-3 py-3.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none"
               />
             </div>
 
             {/* Property Type Dropdown */}
             <div className="relative">
-              <Home className="w-4 h-4 text-red-600 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Home className="w-4 h-4 text-red-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <select
                 value={propertyType}
                 onChange={(e) => setPropertyType(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 rounded-xl pl-10 pr-3 py-3.5 text-xs text-slate-900 focus:outline-none appearance-none"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-red-400 rounded-xl pl-10 pr-3 py-3.5 text-xs text-slate-900 focus:outline-none appearance-none"
               >
                 <option value="">All Rental Types</option>
                 <option value="PG">PG / Co-Living Hostel</option>
@@ -145,11 +145,11 @@ export default function SmartSearchBar() {
 
             {/* Budget Max Price */}
             <div className="relative">
-              <IndianRupee className="w-4 h-4 text-red-600 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <IndianRupee className="w-4 h-4 text-red-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <select
                 value={maxPrice}
                 onChange={(e) => setMaxPrice(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 focus:border-red-600 rounded-xl pl-10 pr-3 py-3.5 text-xs text-slate-900 focus:outline-none appearance-none"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-red-400 rounded-xl pl-10 pr-3 py-3.5 text-xs text-slate-900 focus:outline-none appearance-none"
               >
                 <option value="">Max Monthly Rent</option>
                 <option value="10000">Up to ₹10,000 / mo</option>
@@ -163,7 +163,7 @@ export default function SmartSearchBar() {
             {/* Search Submit */}
             <button
               type="submit"
-              className="w-full py-3.5 bg-red-600 hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition-all"
+              className="w-full py-3.5 bg-red-400 hover:bg-red-500 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition-all"
             >
               <Compass className="w-4 h-4" />
               <span>Find Rentals</span>

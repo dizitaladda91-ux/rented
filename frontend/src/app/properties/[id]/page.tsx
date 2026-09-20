@@ -96,8 +96,8 @@ export default function PropertyDetailPage() {
     return (
       <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center font-sans">
         <div className="text-center space-y-4">
-          <div className="w-12 h-12 rounded-full border-4 border-red-600 border-t-transparent animate-spin mx-auto" />
-          <p className="text-xs uppercase font-bold tracking-widest text-red-600">Loading Rental Listing...</p>
+          <div className="w-12 h-12 rounded-full border-4 border-red-400 border-t-transparent animate-spin mx-auto" />
+          <p className="text-xs uppercase font-bold tracking-widest text-red-400">Loading Rental Listing...</p>
         </div>
       </div>
     );
@@ -108,7 +108,7 @@ export default function PropertyDetailPage() {
       <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center font-sans">
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-2">Rental Property Not Found</h2>
-          <button onClick={() => router.push("/properties")} className="text-sm font-semibold text-red-600 hover:underline">
+          <button onClick={() => router.push("/properties")} className="text-sm font-semibold text-red-400 hover:underline">
             Back to All Rentals
           </button>
         </div>
@@ -125,7 +125,7 @@ export default function PropertyDetailPage() {
   const isShop = property.property_type?.toUpperCase() === "SHOP";
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans selection:bg-red-500 selection:text-white">
+    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans selection:bg-red-400 selection:text-white">
       <Navbar />
 
       {/* Breadcrumb & Navigation */}
@@ -133,7 +133,7 @@ export default function PropertyDetailPage() {
         <div className="flex items-center justify-between mb-4">
           <button
             onClick={() => router.back()}
-            className="text-xs font-semibold text-gray-600 hover:text-red-500 flex items-center gap-1.5 transition-colors bg-white px-3 py-1.5 rounded-lg border border-gray-200 shadow-sm"
+            className="text-xs font-semibold text-gray-600 hover:text-red-400 flex items-center gap-1.5 transition-colors bg-white px-3 py-1.5 rounded-lg border border-gray-200 shadow-sm"
           >
             <ChevronLeft className="w-4 h-4" />
             Back to All Rentals
@@ -143,10 +143,10 @@ export default function PropertyDetailPage() {
             <button
               onClick={() => setIsSaved(!isSaved)}
               className={`p-2 rounded-lg border transition-all flex items-center gap-1.5 text-xs font-semibold ${
-                isSaved ? "bg-red-50 text-red-500 border-red-200" : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
+                isSaved ? "bg-red-50 text-red-400 border-red-200" : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
               }`}
             >
-              <Heart className={`w-4 h-4 ${isSaved ? "fill-red-500 text-red-500" : ""}`} />
+              <Heart className={`w-4 h-4 ${isSaved ? "fill-red-400 text-red-400" : ""}`} />
               <span>{isSaved ? "Saved" : "Save"}</span>
             </button>
             <button
@@ -172,7 +172,7 @@ export default function PropertyDetailPage() {
         <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="px-3 py-1 rounded-md text-xs font-black uppercase tracking-wider bg-red-500 text-white">
+              <span className="px-3 py-1 rounded-md text-xs font-black uppercase tracking-wider bg-red-400 text-white">
                 FOR RENT
               </span>
               <span className="px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-red-50 text-red-700 border border-red-200">
@@ -180,7 +180,7 @@ export default function PropertyDetailPage() {
               </span>
               {property.verification_status === "VERIFIED" && (
                 <span className="px-3 py-1 rounded-md text-xs font-bold bg-red-50 text-red-700 border border-red-200 flex items-center gap-1">
-                  <ShieldCheck className="w-4 h-4 text-red-500" />
+                  <ShieldCheck className="w-4 h-4 text-red-400" />
                   Verified Landlord
                 </span>
               )}
@@ -194,7 +194,7 @@ export default function PropertyDetailPage() {
             </h1>
 
             <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600 font-medium">
-              <MapPin className="w-4 h-4 text-red-500 flex-shrink-0" />
+              <MapPin className="w-4 h-4 text-red-400 flex-shrink-0" />
               <span>
                 {property.location ? `${property.location.address || ""}, ${property.location.locality}, ${property.location.city}, ${property.location.state}` : "India"}
               </span>
@@ -206,13 +206,13 @@ export default function PropertyDetailPage() {
             <span className="text-xs text-gray-500 font-semibold uppercase tracking-wider block mb-1">
               Monthly Rent
             </span>
-            <div className="text-3xl sm:text-4xl font-black text-red-500 tracking-tight">
+            <div className="text-3xl sm:text-4xl font-black text-red-400 tracking-tight">
               {formatRentPrice(property.price)}
             </div>
             <div className="flex items-center gap-3 mt-1.5 lg:justify-end text-xs text-gray-500">
               <span className="font-medium text-gray-700">Deposit: ₹{(property.price * 2).toLocaleString("en-IN")}</span>
               <span>•</span>
-              <span className="text-red-500 font-semibold">Ready to Move</span>
+              <span className="text-red-400 font-semibold">Ready to Move</span>
             </div>
           </div>
         </div>
@@ -227,7 +227,7 @@ export default function PropertyDetailPage() {
             <button
               onClick={() => setActiveTab("photos")}
               className={`px-4 py-2 rounded-lg font-bold uppercase tracking-wider transition-all ${
-                activeTab === "photos" ? "bg-red-600 text-white shadow-md shadow-red-600/20" : "text-gray-600 hover:text-gray-900"
+                activeTab === "photos" ? "bg-red-400 text-white shadow-md shadow-red-400/20" : "text-gray-600 hover:text-gray-900"
               }`}
             >
               Rental Photos ({mediaList.length})
@@ -235,7 +235,7 @@ export default function PropertyDetailPage() {
             <button
               onClick={() => setActiveTab("360tour")}
               className={`px-4 py-2 rounded-lg font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all ${
-                activeTab === "360tour" ? "bg-red-600 text-white shadow-md shadow-red-600/20" : "text-gray-600 hover:text-gray-900"
+                activeTab === "360tour" ? "bg-red-400 text-white shadow-md shadow-red-400/20" : "text-gray-600 hover:text-gray-900"
               }`}
             >
               <Compass className="w-4 h-4" />
@@ -244,7 +244,7 @@ export default function PropertyDetailPage() {
             <button
               onClick={() => setActiveTab("video")}
               className={`px-4 py-2 rounded-lg font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all ${
-                activeTab === "video" ? "bg-red-600 text-white shadow-md shadow-red-600/20" : "text-gray-600 hover:text-gray-900"
+                activeTab === "video" ? "bg-red-400 text-white shadow-md shadow-red-400/20" : "text-gray-600 hover:text-gray-900"
               }`}
             >
               <Video className="w-4 h-4" />
@@ -266,7 +266,7 @@ export default function PropertyDetailPage() {
 
             {activeTab === "360tour" && (
               <div className="w-full h-full flex flex-col items-center justify-center bg-gray-900 text-white p-6 text-center">
-                <Compass className="w-16 h-16 text-red-500 animate-spin mb-4" />
+                <Compass className="w-16 h-16 text-red-400 animate-spin mb-4" />
                 <h3 className="text-2xl font-bold mb-2">Interactive 360° Panoramic View</h3>
                 <p className="text-xs text-gray-300 max-w-md">
                   Inspect the complete living spaces, rooms, kitchen, and bathroom in ultra-clear 360° virtual preview.
@@ -276,7 +276,7 @@ export default function PropertyDetailPage() {
 
             {activeTab === "video" && (
               <div className="w-full h-full flex flex-col items-center justify-center bg-black text-white p-6 text-center">
-                <Video className="w-16 h-16 text-red-500 mb-4" />
+                <Video className="w-16 h-16 text-red-400 mb-4" />
                 <h3 className="text-2xl font-bold mb-2">HD Property Walkthrough Video</h3>
                 <p className="text-xs text-gray-300 max-w-md">
                   Full walk-around video showcasing room dimensions, natural lighting, and neighborhood surroundings.
@@ -293,7 +293,7 @@ export default function PropertyDetailPage() {
                   key={m.id || idx}
                   onClick={() => setActiveMediaIndex(idx)}
                   className={`relative w-24 h-16 rounded-lg overflow-hidden border-2 flex-shrink-0 transition-all ${
-                    activeMediaIndex === idx ? "border-red-600 ring-2 ring-red-600/30 scale-105" : "border-transparent opacity-60 hover:opacity-100"
+                    activeMediaIndex === idx ? "border-red-400 ring-2 ring-red-400/30 scale-105" : "border-transparent opacity-60 hover:opacity-100"
                   }`}
                 >
                   <Image src={m.url} alt="Thumbnail" fill className="object-cover" />
@@ -315,7 +315,7 @@ export default function PropertyDetailPage() {
             {/* Quick Specs Cards */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center">
-                <Building2 className="w-6 h-6 text-red-600 mx-auto mb-1.5" />
+                <Building2 className="w-6 h-6 text-red-400 mx-auto mb-1.5" />
                 <span className="text-[11px] text-gray-500 uppercase font-semibold block">Property Type</span>
                 <span className="text-sm font-bold text-gray-900">
                   {property.property_type}
@@ -323,7 +323,7 @@ export default function PropertyDetailPage() {
               </div>
 
               <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center">
-                <Maximize2 className="w-6 h-6 text-red-600 mx-auto mb-1.5" />
+                <Maximize2 className="w-6 h-6 text-red-400 mx-auto mb-1.5" />
                 <span className="text-[11px] text-gray-500 uppercase font-semibold block">Carpet Area</span>
                 <span className="text-sm font-bold text-gray-900">
                   {property.built_up_area_sqft ? `${property.built_up_area_sqft.toLocaleString()} sqft` : "Spacious"}
@@ -331,7 +331,7 @@ export default function PropertyDetailPage() {
               </div>
 
               <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center">
-                <Bed className="w-6 h-6 text-red-600 mx-auto mb-1.5" />
+                <Bed className="w-6 h-6 text-red-400 mx-auto mb-1.5" />
                 <span className="text-[11px] text-gray-500 uppercase font-semibold block">
                   {isPG ? "Room Sharing" : isShop ? "Units / Floor" : "Bedrooms"}
                 </span>
@@ -341,7 +341,7 @@ export default function PropertyDetailPage() {
               </div>
 
               <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-center">
-                <Bath className="w-6 h-6 text-red-600 mx-auto mb-1.5" />
+                <Bath className="w-6 h-6 text-red-400 mx-auto mb-1.5" />
                 <span className="text-[11px] text-gray-500 uppercase font-semibold block">Bathrooms</span>
                 <span className="text-sm font-bold text-gray-900">
                   {property.bathrooms ? `${property.bathrooms} Attached` : "1 Attached"}
@@ -352,7 +352,7 @@ export default function PropertyDetailPage() {
             {/* Description */}
             <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm space-y-4">
               <h2 className="text-xl font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
-                <FileText className="w-5 h-5 text-red-600" />
+                <FileText className="w-5 h-5 text-red-400" />
                 About This Rental
               </h2>
               <p className="text-sm text-gray-700 leading-relaxed font-normal whitespace-pre-line">
@@ -362,19 +362,19 @@ export default function PropertyDetailPage() {
               {/* Highlights */}
               <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 border-t border-gray-100">
                 <div className="flex items-center gap-2.5 text-xs font-semibold text-gray-700">
-                  <Key className="w-4 h-4 text-red-600" />
+                  <Key className="w-4 h-4 text-red-400" />
                   <span>Immediate Move-in Available</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs font-semibold text-gray-700">
-                  <Clock className="w-4 h-4 text-red-600" />
+                  <Clock className="w-4 h-4 text-red-400" />
                   <span>Flexible 6 - 11 Month Lease Agreement</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs font-semibold text-gray-700">
-                  <ShieldCheck className="w-4 h-4 text-red-600" />
+                  <ShieldCheck className="w-4 h-4 text-red-400" />
                   <span>Verified Landlord & Safe Locality</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs font-semibold text-gray-700">
-                  <Check className="w-4 h-4 text-red-600" />
+                  <Check className="w-4 h-4 text-red-400" />
                   <span>Zero Hidden Brokerage Commission</span>
                 </div>
               </div>
@@ -383,7 +383,7 @@ export default function PropertyDetailPage() {
             {/* Visual Amenities Cards */}
             <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm space-y-6">
               <h2 className="text-xl font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-red-600" />
+                <Sparkles className="w-5 h-5 text-red-400" />
                 Included Amenities & Facilities
               </h2>
 
@@ -392,7 +392,7 @@ export default function PropertyDetailPage() {
                   property.amenities.map((am) => (
                     <div key={am.id} className="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center gap-2.5">
                       <div className="w-7 h-7 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 className="w-4 h-4 text-red-600" />
+                        <CheckCircle2 className="w-4 h-4 text-red-400" />
                       </div>
                       <span className="text-xs font-semibold text-gray-800">{am.name}</span>
                     </div>
@@ -408,7 +408,7 @@ export default function PropertyDetailPage() {
                   ].map((name, i) => (
                     <div key={i} className="p-3 rounded-xl bg-gray-50 border border-gray-200 flex items-center gap-2.5">
                       <div className="w-7 h-7 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 className="w-4 h-4 text-red-600" />
+                        <CheckCircle2 className="w-4 h-4 text-red-400" />
                       </div>
                       <span className="text-xs font-semibold text-gray-800">{name}</span>
                     </div>
@@ -420,7 +420,7 @@ export default function PropertyDetailPage() {
             {/* Verified Rental Assurance Block */}
             <div className="bg-red-50 rounded-2xl border border-red-200 p-6 sm:p-8 space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-red-500 text-white flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-red-400 text-white flex items-center justify-center">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
@@ -437,10 +437,10 @@ export default function PropertyDetailPage() {
 
           {/* RIGHT COLUMN: Contact Landlord & Book Visit Sticky Card */}
           <div className="lg:col-span-1">
-            <div className="bg-white p-6 rounded-2xl border-2 border-red-500 shadow-xl shadow-red-100 space-y-5 sticky top-28">
+            <div className="bg-white p-6 rounded-2xl border-2 border-red-400 shadow-xl shadow-red-100 space-y-5 sticky top-28">
               
               <div className="border-b border-gray-100 pb-4">
-                <span className="text-xs uppercase font-bold tracking-wider text-red-500 block mb-1">
+                <span className="text-xs uppercase font-bold tracking-wider text-red-400 block mb-1">
                   Direct Contact
                 </span>
                 <h3 className="text-xl font-extrabold text-gray-900">
@@ -450,14 +450,14 @@ export default function PropertyDetailPage() {
 
               {submitted ? (
                 <div className="p-6 rounded-xl bg-red-50 border border-red-200 text-center space-y-3">
-                  <CheckCircle2 className="w-12 h-12 text-red-500 mx-auto" />
+                  <CheckCircle2 className="w-12 h-12 text-red-400 mx-auto" />
                   <h4 className="text-base font-bold text-red-950">Request Submitted!</h4>
                   <p className="text-xs text-red-800">
                     The property manager and landlord have received your inquiry. You will be contacted shortly on your mobile number.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="text-xs font-bold text-red-500 hover:underline pt-2 block mx-auto"
+                    className="text-xs font-bold text-red-400 hover:underline pt-2 block mx-auto"
                   >
                     Submit another query
                   </button>
@@ -471,7 +471,7 @@ export default function PropertyDetailPage() {
                       type="button"
                       onClick={() => setInquiryType("callback")}
                       className={`flex-1 py-2 text-xs font-bold rounded-md transition-all ${
-                        inquiryType === "callback" ? "bg-red-500 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
+                        inquiryType === "callback" ? "bg-red-400 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
                       }`}
                     >
                       Instant Callback
@@ -480,7 +480,7 @@ export default function PropertyDetailPage() {
                       type="button"
                       onClick={() => setInquiryType("visit")}
                       className={`flex-1 py-2 text-xs font-bold rounded-md transition-all ${
-                        inquiryType === "visit" ? "bg-red-500 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
+                        inquiryType === "visit" ? "bg-red-400 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
                       }`}
                     >
                       Book Visit
@@ -495,7 +495,7 @@ export default function PropertyDetailPage() {
                       value={leadName}
                       onChange={(e) => setLeadName(e.target.value)}
                       placeholder="e.g. Aman Sharma"
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-500 focus:bg-white"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-400 focus:bg-white"
                     />
                   </div>
 
@@ -507,7 +507,7 @@ export default function PropertyDetailPage() {
                       value={leadPhone}
                       onChange={(e) => setLeadPhone(e.target.value)}
                       placeholder="+91 98765 43210"
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-500 focus:bg-white"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-400 focus:bg-white"
                     />
                   </div>
 
@@ -519,7 +519,7 @@ export default function PropertyDetailPage() {
                       value={leadEmail}
                       onChange={(e) => setLeadEmail(e.target.value)}
                       placeholder="aman@example.com"
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-500 focus:bg-white"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-400 focus:bg-white"
                     />
                   </div>
 
@@ -532,7 +532,7 @@ export default function PropertyDetailPage() {
                           required
                           value={visitDate}
                           onChange={(e) => setVisitDate(e.target.value)}
-                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-2.5 py-2 text-gray-900 focus:outline-none focus:border-red-500 focus:bg-white text-xs"
+                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-2.5 py-2 text-gray-900 focus:outline-none focus:border-red-400 focus:bg-white text-xs"
                         />
                       </div>
                       <div>
@@ -540,7 +540,7 @@ export default function PropertyDetailPage() {
                         <select
                           value={visitTime}
                           onChange={(e) => setVisitTime(e.target.value)}
-                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-2.5 py-2 text-gray-900 focus:outline-none focus:border-red-500 focus:bg-white text-xs"
+                          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-2.5 py-2 text-gray-900 focus:outline-none focus:border-red-400 focus:bg-white text-xs"
                         >
                           <option value="10:00 AM">10:00 AM</option>
                           <option value="12:00 PM">12:00 PM</option>
@@ -559,13 +559,13 @@ export default function PropertyDetailPage() {
                       value={leadMessage}
                       onChange={(e) => setLeadMessage(e.target.value)}
                       placeholder="e.g. Looking to shift by next month, need single room..."
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-500 focus:bg-white"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-red-400 focus:bg-white"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-red-500 hover:bg-red-600 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-red-500/25 flex items-center justify-center gap-2 transition-all"
+                    className="w-full py-3.5 bg-red-400 hover:bg-red-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-red-400/25 flex items-center justify-center gap-2 transition-all"
                   >
                     <span>{inquiryType === "visit" ? "Book Free Site Visit" : "Get Landlord Contact"}</span>
                     <ArrowRight className="w-4 h-4" />

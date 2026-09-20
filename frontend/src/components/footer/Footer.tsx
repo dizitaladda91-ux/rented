@@ -12,13 +12,13 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-200 p-0.5 flex items-center justify-center shadow-sm">
-                <Building2 className="w-5 h-5 text-red-500" />
+                <Building2 className="w-5 h-5 text-red-400" />
               </div>
               <div>
                 <span className="font-heading text-2xl font-black text-black tracking-wide block">
-                  RENTED<span className="text-red-500">.IN</span>
+                  RENTED<span className="text-red-400">.IN</span>
                 </span>
-                <span className="text-[10px] text-red-600 font-extrabold uppercase tracking-wider block">
+                <span className="text-[10px] text-red-500 font-extrabold uppercase tracking-wider block">
                   PG • Flat • House • Shop
                 </span>
               </div>
@@ -26,15 +26,15 @@ export default function Footer() {
             <p className="text-sm leading-relaxed text-black/80 font-normal">
               India&apos;s trusted rental portal for finding verified PG accommodations, 1/2/3 BHK flats, independent houses, and commercial shops with zero hassle.
             </p>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-50 border border-red-200 text-xs font-bold text-red-700">
-              <ShieldCheck className="w-4 h-4 text-red-500" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-50 border border-red-200 text-xs font-bold text-red-500">
+              <ShieldCheck className="w-4 h-4 text-red-400" />
               <span>100% Verified Rental Listings</span>
             </div>
           </div>
 
           {/* Col 2: Rental Categories */}
           <div>
-            <h4 className="font-heading text-black font-black text-base mb-4 tracking-wider uppercase border-b-2 border-red-500 pb-1.5 inline-block">
+            <h4 className="font-heading text-black font-black text-base mb-4 tracking-wider uppercase border-b-2 border-red-400 pb-1.5 inline-block">
               Rental Categories
             </h4>
             <ul className="space-y-2.5 text-sm font-semibold">
@@ -46,8 +46,8 @@ export default function Footer() {
                 { label: "Furnished Studio Apartments", href: "/properties?property_type=Flat&furnishing=Fully+Furnished" }
               ].map((item, idx) => (
                 <li key={idx}>
-                  <Link href={item.href} className="text-slate-800 hover:text-red-500 transition-colors flex items-center gap-1.5 group">
-                    <ChevronRight className="w-3.5 h-3.5 text-red-500 group-hover:translate-x-0.5 transition-transform" />
+                  <Link href={item.href} className="text-slate-800 hover:text-red-400 transition-colors flex items-center gap-1.5 group">
+                    <ChevronRight className="w-3.5 h-3.5 text-red-400 group-hover:translate-x-0.5 transition-transform" />
                     <span>{item.label}</span>
                   </Link>
                 </li>
@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Col 3: Popular Cities */}
           <div>
-            <h4 className="font-heading text-black font-black text-base mb-4 tracking-wider uppercase border-b-2 border-red-500 pb-1.5 inline-block">
+            <h4 className="font-heading text-black font-black text-base mb-4 tracking-wider uppercase border-b-2 border-red-400 pb-1.5 inline-block">
               Popular Rental Hubs
             </h4>
             <ul className="space-y-2.5 text-sm font-semibold">
@@ -70,8 +70,8 @@ export default function Footer() {
                 { label: "Pune (Koregaon Park & Viman Nagar)", href: "/properties?location=Pune" }
               ].map((item, idx) => (
                 <li key={idx}>
-                  <Link href={item.href} className="text-slate-800 hover:text-red-500 transition-colors flex items-center gap-1.5 group">
-                    <ChevronRight className="w-3.5 h-3.5 text-red-500 group-hover:translate-x-0.5 transition-transform" />
+                  <Link href={item.href} className="text-slate-800 hover:text-red-400 transition-colors flex items-center gap-1.5 group">
+                    <ChevronRight className="w-3.5 h-3.5 text-red-400 group-hover:translate-x-0.5 transition-transform" />
                     <span>{item.label}</span>
                   </Link>
                 </li>
@@ -81,27 +81,27 @@ export default function Footer() {
 
           {/* Col 4: Support & Contact */}
           <div>
-            <h4 className="font-heading text-black font-black text-base mb-4 tracking-wider uppercase border-b-2 border-red-500 pb-1.5 inline-block">
+            <h4 className="font-heading text-black font-black text-base mb-4 tracking-wider uppercase border-b-2 border-red-400 pb-1.5 inline-block">
               Rental Helpdesk
             </h4>
             <p className="text-sm text-slate-700 mb-4 font-medium leading-relaxed">
               Have questions about renting a flat, PG, house, or commercial shop? Our support team is here to assist.
             </p>
             <div className="space-y-2.5 text-sm font-semibold">
-              <a href="tel:+919876543210" className="flex items-center gap-2.5 text-black hover:text-red-500 transition-colors">
-                <div className="w-7 h-7 rounded-full bg-red-50 flex items-center justify-center text-red-500 border border-red-200 shrink-0">
+              <a href="tel:+919876543210" className="flex items-center gap-2.5 text-black hover:text-red-400 transition-colors">
+                <div className="w-7 h-7 rounded-full bg-red-50 flex items-center justify-center text-red-400 border border-red-200 shrink-0">
                   <Phone className="w-3.5 h-3.5" />
                 </div>
                 <span>+91 98765 43210</span>
               </a>
-              <a href="mailto:support@rented.in" className="flex items-center gap-2.5 text-black hover:text-red-500 transition-colors">
-                <div className="w-7 h-7 rounded-full bg-red-50 flex items-center justify-center text-red-500 border border-red-200 shrink-0">
+              <a href="mailto:support@rented.in" className="flex items-center gap-2.5 text-black hover:text-red-400 transition-colors">
+                <div className="w-7 h-7 rounded-full bg-red-50 flex items-center justify-center text-red-400 border border-red-200 shrink-0">
                   <Mail className="w-3.5 h-3.5" />
                 </div>
                 <span>support@rented.in</span>
               </a>
               <div className="flex items-start gap-2.5 text-slate-700 pt-1">
-                <div className="w-7 h-7 rounded-full bg-red-50 flex items-center justify-center text-red-500 border border-red-200 shrink-0 mt-0.5">
+                <div className="w-7 h-7 rounded-full bg-red-50 flex items-center justify-center text-red-400 border border-red-200 shrink-0 mt-0.5">
                   <MapPin className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-xs font-medium">NCR Corporate Office, Connaught Place & Sector 18 Noida</span>
@@ -114,12 +114,12 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs font-semibold text-slate-600 gap-4">
           <p>
-            © 2026 <strong className="text-black font-extrabold">RENTED</strong>. All rights reserved. Dealing in <span className="text-red-600 font-bold">PG, House, Flat & Shop</span>.
+            © 2026 <strong className="text-black font-extrabold">RENTED</strong>. All rights reserved. Dealing in <span className="text-red-500 font-bold">PG, House, Flat & Shop</span>.
           </p>
           <div className="flex items-center space-x-6">
-            <Link href="/privacy" className="text-black hover:text-red-500 transition-colors font-medium">Privacy Policy</Link>
-            <Link href="/terms" className="text-black hover:text-red-500 transition-colors font-medium">Terms of Service</Link>
-            <Link href="/admin" className="text-red-600 hover:text-red-700 bg-red-50 border border-red-200 px-2.5 py-1 rounded-md font-bold transition-all shadow-sm">
+            <Link href="/privacy" className="text-black hover:text-red-400 transition-colors font-medium">Privacy Policy</Link>
+            <Link href="/terms" className="text-black hover:text-red-400 transition-colors font-medium">Terms of Service</Link>
+            <Link href="/admin" className="text-red-500 hover:text-red-600 bg-red-50 border border-red-200 px-2.5 py-1 rounded-md font-bold transition-all shadow-sm">
               Admin Portal
             </Link>
           </div>

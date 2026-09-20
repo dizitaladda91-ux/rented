@@ -232,12 +232,12 @@ export default function SellPropertyWizard() {
       {/* Header Banner */}
       <div className="bg-white border-b border-slate-200 py-10 px-4 text-center shadow-sm">
         <div className="max-w-4xl mx-auto space-y-2">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-xs font-bold text-red-500 uppercase tracking-widest">
-            <ShieldCheck className="w-4 h-4 text-red-500" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-xs font-bold text-red-400 uppercase tracking-widest">
+            <ShieldCheck className="w-4 h-4 text-red-400" />
             <span>Verified Rental Listing Wizard</span>
           </div>
           <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Post Your <span className="text-red-500">Rental Property</span>
+            Post Your <span className="text-red-400">Rental Property</span>
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto font-normal leading-relaxed">
             Multi-step listing wizard for PG, Flats & Apartments, Independent Houses, and Commercial Retail Shops.
@@ -251,9 +251,9 @@ export default function SellPropertyWizard() {
         {!isAuthenticated ? (
           <Card3D intensity={6} depth={15}>
             <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-2xl text-center space-y-6">
-              <div className="w-16 h-16 rounded-2xl bg-red-500 p-0.5 mx-auto flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 rounded-2xl bg-red-400 p-0.5 mx-auto flex items-center justify-center shadow-lg">
                 <div className="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center">
-                  <Lock className="w-8 h-8 text-red-400" />
+                  <Lock className="w-8 h-8 text-red-300" />
                 </div>
               </div>
 
@@ -269,7 +269,7 @@ export default function SellPropertyWizard() {
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
                 <button
                   onClick={handleQuickSellerLogin}
-                  className="w-full py-3.5 bg-red-500 hover:bg-red-600 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3.5 bg-red-400 hover:bg-red-500 text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
                 >
                   <UserCheck className="w-4 h-4 text-white" />
                   <span>Continue as Verified Landlord (Demo)</span>
@@ -293,7 +293,7 @@ export default function SellPropertyWizard() {
             <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
                 <div>
-                  <span className="text-xs font-mono font-bold text-red-500 uppercase tracking-wider block">
+                  <span className="text-xs font-mono font-bold text-red-400 uppercase tracking-wider block">
                     Step {step} of 9 — {stepsList[step - 1]?.label}
                   </span>
                   <h2 className="font-heading text-2xl font-bold text-slate-900">
@@ -310,8 +310,8 @@ export default function SellPropertyWizard() {
                 </div>
 
                 {/* Status Pipeline Badge */}
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-50 border border-red-200 text-xs font-bold text-red-700">
-                  <ShieldCheck className="w-4 h-4 text-red-500" />
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-50 border border-red-200 text-xs font-bold text-red-600">
+                  <ShieldCheck className="w-4 h-4 text-red-400" />
                   <span>Pipeline: Draft → Submitted → Landlord Verified</span>
                 </div>
               </div>
@@ -326,7 +326,7 @@ export default function SellPropertyWizard() {
                       step === st.num
                         ? "bosa-gradient-bg text-white shadow-md"
                         : step > st.num
-                        ? "bg-red-50 text-red-700 border border-red-200"
+                        ? "bg-red-50 text-red-600 border border-red-200"
                         : "bg-slate-100 text-slate-500 hover:bg-slate-200"
                     }`}
                   >
@@ -355,7 +355,7 @@ export default function SellPropertyWizard() {
                           onClick={() => setSellerType(type)}
                           className={`py-3 rounded-xl text-xs font-bold font-heading border transition-all ${
                             sellerType === type
-                              ? "bosa-gradient-bg text-white shadow-md border-red-500"
+                              ? "bosa-gradient-bg text-white shadow-md border-red-400"
                               : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
                           }`}
                         >
@@ -373,7 +373,7 @@ export default function SellPropertyWizard() {
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         placeholder="Aman Sharma"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-500"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-400"
                       />
                     </div>
 
@@ -384,7 +384,7 @@ export default function SellPropertyWizard() {
                         value={mobileNumber}
                         onChange={(e) => setMobileNumber(e.target.value)}
                         placeholder="+91 98765 43210"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-500"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-400"
                       />
                     </div>
 
@@ -395,7 +395,7 @@ export default function SellPropertyWizard() {
                         value={whatsappNumber}
                         onChange={(e) => setWhatsappNumber(e.target.value)}
                         placeholder="+91 98765 43210"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-500"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-400"
                       />
                     </div>
 
@@ -406,7 +406,7 @@ export default function SellPropertyWizard() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="landlord@rented.in"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-500"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-400"
                       />
                     </div>
 
@@ -454,7 +454,7 @@ export default function SellPropertyWizard() {
                           onClick={() => setPropertyType(type)}
                           className={`py-3 rounded-xl text-xs font-bold font-heading border transition-all ${
                             propertyType === type
-                              ? "bg-red-500 text-white shadow-md border-red-600"
+                              ? "bg-red-400 text-white shadow-md border-red-500"
                               : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
                           }`}
                         >
@@ -472,7 +472,7 @@ export default function SellPropertyWizard() {
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                         placeholder="e.g. Spacious 2 BHK Fully Furnished Apartment with Balcony"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-500"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-400"
                       />
                     </div>
 
@@ -483,7 +483,7 @@ export default function SellPropertyWizard() {
                         value={shortDescription}
                         onChange={(e) => setShortDescription(e.target.value)}
                         placeholder="Furnishing details, room layout, society amenities, nearby metro/market, lease conditions..."
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-500"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-slate-900 focus:outline-none focus:border-red-400"
                       />
                     </div>
 
@@ -597,7 +597,7 @@ export default function SellPropertyWizard() {
                         type="checkbox"
                         checked={hideExactAddress}
                         onChange={(e) => setHideExactAddress(e.target.checked)}
-                        className="w-4 h-4 text-red-500 rounded accent-red-500"
+                        className="w-4 h-4 text-red-400 rounded accent-red-400"
                       />
                       <span>Hide Exact Address on Public Listing (Show Locality Only)</span>
                     </label>
@@ -747,7 +747,7 @@ export default function SellPropertyWizard() {
                           type="checkbox"
                           checked={amenities[name]}
                           onChange={() => {}}
-                          className="w-4 h-4 text-red-500 rounded accent-red-500"
+                          className="w-4 h-4 text-red-400 rounded accent-red-400"
                         />
                       </label>
                     ))}
@@ -761,7 +761,7 @@ export default function SellPropertyWizard() {
               {step === 6 && (
                 <div className="space-y-6">
                   <div className="p-4 rounded-2xl bg-red-50 border border-red-200 flex items-center gap-3 text-xs text-red-950">
-                    <ShieldCheck className="w-6 h-6 text-red-500 shrink-0" />
+                    <ShieldCheck className="w-6 h-6 text-red-400 shrink-0" />
                     <span>
                       <strong>Admin Verification Queue:</strong> Providing rental agreement or electricity bill speeds up verification and awards the Verified Landlord badge.
                     </span>
@@ -881,7 +881,7 @@ export default function SellPropertyWizard() {
                         type="checkbox"
                         checked={termsAgreed}
                         onChange={(e) => setTermsAgreed(e.target.checked)}
-                        className="w-4 h-4 text-red-500 rounded accent-red-500"
+                        className="w-4 h-4 text-red-400 rounded accent-red-400"
                       />
                       <span>I agree to the Rental Terms & Conditions and certify property ownership.</span>
                     </label>
@@ -899,7 +899,7 @@ export default function SellPropertyWizard() {
                       <span className="px-3 py-1 rounded-md bosa-gradient-bg text-white font-bold uppercase text-[10px]">
                         {propertyType}
                       </span>
-                      <span className="font-heading text-2xl font-extrabold text-red-500">
+                      <span className="font-heading text-2xl font-extrabold text-red-400">
                         ₹ {expectedPrice ? parseFloat(expectedPrice).toLocaleString("en-IN") : "25,000"} / mo
                       </span>
                     </div>
@@ -927,7 +927,7 @@ export default function SellPropertyWizard() {
               {/* ==================================================================== */}
               {step === 10 && (
                 <div className="text-center py-10 space-y-4">
-                  <CheckCircle2 className="w-16 h-16 text-red-500 mx-auto" />
+                  <CheckCircle2 className="w-16 h-16 text-red-400 mx-auto" />
                   <h2 className="font-heading text-3xl font-bold text-slate-900">Submitted for Landlord Verification!</h2>
                   <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
                     Your rental listing status: <strong>Submitted → Under Review</strong>. Platform team will review the details before making it live with the Verified Landlord badge.

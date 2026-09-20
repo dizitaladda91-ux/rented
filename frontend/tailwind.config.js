@@ -9,26 +9,40 @@ module.exports = {
     extend: {
       colors: {
         rented: {
-          red: "#EF4444",         // Lighter fresh vibrant red (red-500)
-          "red-hover": "#DC2626", // Soft hover red (red-600)
-          "red-light": "#FEF2F2", // Soft light red tint (red-50)
-          "red-border": "#FECACA", // Light red border (red-200)
-          "red-dark": "#DC2626",  // Rich red accent
+          red: "#F87171",         // Soft coral-red
+          "red-hover": "#EF4444", // Gentle hover red
+          "red-light": "#FFF5F5", // Crisp light red-white tint
+          "red-border": "#FECACA", // Light red border
+          "red-soft": "#FED7D7",  // Delicate pastel red
+          "red-dark": "#F87171",  // Light accent
           white: "#FFFFFF",
           surface: "#F8FAFC",
           card: "#FFFFFF",
           border: "#E2E8F0",
           muted: "#64748B",
         },
+        red: {
+          50: "#FFF5F5",
+          100: "#FEE2E2",
+          200: "#FECACA",
+          300: "#FED7D7",
+          400: "#FCA5A5",         // Soft light pastel red for all red-400 elements
+          500: "#F87171",         // Soft coral red on hover/accents
+          600: "#EF4444",         // Gentle accent
+          700: "#F87171",
+          800: "#EF4444",
+          900: "#991B1B",
+          950: "#450A0A",
+        },
         luxury: {
           dark: "#0F172A",
-          emerald: "#EF4444",     // Lighter red compatibility
-          accent: "#F87171",      // Light rose-red accent
-          "accent-hover": "#EF4444",
-          bronze: "#DC2626",
+          emerald: "#FCA5A5",     // Light soft red compatibility
+          accent: "#FED7D7",      // Light rose-red accent
+          "accent-hover": "#F87171",
+          bronze: "#EF4444",
           cream: "#FFFFFF",
           card: "#FFFFFF",
-          border: "rgba(239, 68, 68, 0.15)",
+          border: "rgba(252, 165, 165, 0.2)",
           muted: "#64748B",
         }
       },
@@ -38,14 +52,14 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "red-gradient": "linear-gradient(135deg, #F87171 0%, #EF4444 50%, #DC2626 100%)",
-        "gold-gradient": "linear-gradient(135deg, #F87171 0%, #EF4444 100%)",
+        "red-gradient": "linear-gradient(135deg, #FED7D7 0%, #FCA5A5 50%, #F87171 100%)",
+        "gold-gradient": "linear-gradient(135deg, #FED7D7 0%, #FCA5A5 100%)",
         "dark-emerald": "linear-gradient(180deg, #1E293B 0%, #0F172A 100%)",
       },
       boxShadow: {
         'luxury': '0 20px 40px -15px rgba(0, 0, 0, 0.15)',
-        'red-glow': '0 0 25px rgba(239, 68, 68, 0.25)',
-        'gold-glow': '0 0 25px rgba(239, 68, 68, 0.25)',
+        'red-glow': '0 0 25px rgba(252, 165, 165, 0.3)',
+        'gold-glow': '0 0 25px rgba(252, 165, 165, 0.3)',
       }
     },
   },
