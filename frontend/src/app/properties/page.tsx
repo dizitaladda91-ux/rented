@@ -198,14 +198,14 @@ function SearchResultsContent() {
       {/* HEADER BANNER */}
       <div className="bg-white border-b border-slate-200 py-12 px-4 shadow-sm">
         <div className="max-w-7xl mx-auto text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-xs font-bold text-red-500 uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-xs font-semibold text-red-500 uppercase tracking-wider">
             <Sparkles className="w-4 h-4 text-red-400" />
             <span>Verified Rental Discovery</span>
           </div>
-          <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Explore Verified <span className="text-red-400">Rental Properties</span>
+          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
+            Explore Verified <span className="text-red-400 font-bold">Rental Properties</span>
           </h1>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto font-normal">
+          <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto font-normal">
             Showing {total} verified PG, flats, independent houses, and commercial shops available for rent across India.
           </p>
         </div>
@@ -215,21 +215,21 @@ function SearchResultsContent() {
         
         {/* BUYER PERSONALIZED LOCATION BANNER */}
         {user && user.city && (
-          <div className="bg-red-50 text-slate-900 p-5 rounded-3xl shadow-sm border border-red-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+          <div className="bg-red-50 text-slate-900 p-5 rounded-2xl shadow-sm border border-red-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
             <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-red-400 flex items-center justify-center shrink-0 shadow-sm">
-                <MapPin className="w-6 h-6 text-white" />
+              <div className="w-11 h-11 rounded-xl bg-red-400 flex items-center justify-center shrink-0 shadow-sm">
+                <MapPin className="w-5 h-5 text-white" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold uppercase tracking-widest text-red-500">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-red-500">
                     Showing Nearby Listings
                   </span>
-                  <span className="text-[10px] bg-red-400 text-white font-extrabold px-2 py-0.5 rounded-full uppercase">
+                  <span className="text-[10px] bg-red-400 text-white font-bold px-2 py-0.5 rounded-full uppercase">
                     Your Profile City
                   </span>
                 </div>
-                <h3 className="font-heading text-lg font-black tracking-wide mt-0.5 text-slate-900">
+                <h3 className="font-heading text-base sm:text-lg font-bold tracking-normal mt-0.5 text-slate-900">
                   Rentals in {user.city} {user.pincode ? `(${user.pincode})` : ""}
                 </h3>
                 <p className="text-xs text-slate-600 font-normal">
@@ -244,10 +244,10 @@ function SearchResultsContent() {
                   setSelectedCity(user.city || "");
                   setSelectedPincode(user.pincode || "");
                 }}
-                className={`px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider font-bold transition-all whitespace-nowrap shadow-sm ${
+                className={`px-4 py-2 rounded-xl text-xs uppercase tracking-wider font-semibold transition-all whitespace-nowrap shadow-sm ${
                   selectedCity.toLowerCase() === (user.city || "").toLowerCase()
-                    ? "bg-red-400 text-white shadow-md font-extrabold"
-                    : "bg-white text-slate-800 border border-slate-200 hover:bg-slate-50"
+                    ? "bg-red-400 text-white shadow-sm font-bold"
+                    : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-50"
                 }`}
               >
                 Focus On My City
@@ -258,7 +258,7 @@ function SearchResultsContent() {
                     setSelectedCity("");
                     setSelectedPincode("");
                   }}
-                  className="px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider font-bold bg-slate-200 hover:bg-slate-300 text-slate-700 transition-all whitespace-nowrap"
+                  className="px-3.5 py-2 rounded-xl text-xs uppercase tracking-wider font-medium bg-slate-200 hover:bg-slate-300 text-slate-700 transition-all whitespace-nowrap"
                 >
                   View All India
                 </button>
@@ -273,7 +273,7 @@ function SearchResultsContent() {
         <section className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <span className="text-xs font-heading font-bold uppercase tracking-widest text-red-400">
+              <span className="text-xs font-heading font-semibold uppercase tracking-wider text-red-400">
                 Property Categories
               </span>
               <h2 className="font-heading text-xl sm:text-2xl font-bold text-slate-900 mt-0.5">

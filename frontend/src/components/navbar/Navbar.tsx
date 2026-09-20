@@ -60,42 +60,42 @@ export default function Navbar() {
                 <Building2 className="w-6 h-6 text-white" />
               </div>
               <div>
-                <span className="font-heading text-2xl font-extrabold tracking-tight text-slate-900 block leading-none">
+                <span className="font-heading text-2xl font-bold tracking-tight text-slate-900 block leading-none">
                   RENTED<span className="text-red-400">.</span>
                 </span>
-                <span className="text-[10px] tracking-widest text-slate-950 uppercase font-sans font-black block mt-1">
+                <span className="text-[10px] tracking-widest text-slate-600 uppercase font-sans font-medium block mt-1">
                   PG • House • Flat • Shop
                 </span>
               </div>
             </Link>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center space-x-8 font-heading text-sm font-extrabold tracking-wide">
+            <nav className="hidden lg:flex items-center space-x-7 font-heading text-sm font-semibold tracking-normal">
               <Link href="/" className="text-red-400 hover:text-red-500 transition-colors">
                 Home
               </Link>
 
-              <Link href="/properties" className="text-slate-900 hover:text-red-400 transition-colors flex items-center gap-1">
+              <Link href="/properties" className="text-slate-700 hover:text-red-400 transition-colors flex items-center gap-1">
                 <span>All Rentals</span>
               </Link>
 
-              <Link href="/pg" className="text-slate-900 hover:text-red-400 transition-colors">
+              <Link href="/pg" className="text-slate-700 hover:text-red-400 transition-colors">
                 PG / Hostels
               </Link>
 
-              <Link href="/flats" className="text-slate-900 hover:text-red-400 transition-colors">
+              <Link href="/flats" className="text-slate-700 hover:text-red-400 transition-colors">
                 Flats
               </Link>
 
-              <Link href="/houses" className="text-slate-900 hover:text-red-400 transition-colors">
+              <Link href="/houses" className="text-slate-700 hover:text-red-400 transition-colors">
                 Houses
               </Link>
 
-              <Link href="/shops" className="text-slate-900 hover:text-red-400 transition-colors">
+              <Link href="/shops" className="text-slate-700 hover:text-red-400 transition-colors">
                 Shops
               </Link>
 
-              <Link href="/favorites" className="text-slate-900 hover:text-red-400 transition-colors flex items-center gap-1.5">
+              <Link href="/favorites" className="text-slate-700 hover:text-red-400 transition-colors flex items-center gap-1.5">
                 <Heart className="w-4 h-4 text-red-400" />
                 <span>Saved</span>
               </Link>
@@ -105,7 +105,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center space-x-4">
               <Link
                 href="/sell"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-red-400 hover:bg-red-500 text-white font-heading font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-red-400 hover:bg-red-500 text-white font-heading font-semibold text-xs uppercase tracking-wider shadow-sm transition-all"
               >
                 <PlusCircle className="w-4 h-4" />
                 <span>Post Rental</span>

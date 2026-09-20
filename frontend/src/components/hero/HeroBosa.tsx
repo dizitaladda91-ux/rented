@@ -107,8 +107,8 @@ export default function HeroBosa() {
           <span className="text-white font-semibold">India’s Verified Rental Marketplace</span>
         </div>
 
-        <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight">
-          Find & Rent <span className="text-red-400 drop-shadow-[0_4px_24px_rgba(229,72,77,0.4)]">PG, Flat, House & Shop</span>
+        <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
+          Find & Rent <span className="text-red-400 drop-shadow-[0_4px_24px_rgba(229,72,77,0.3)] font-bold">PG, Flat, House & Shop</span>
         </h1>
 
         <p className="font-sans text-base sm:text-xl text-slate-200 max-w-3xl mx-auto font-light leading-relaxed mt-4">

@@ -108,21 +108,78 @@ function LoginForm() {
     }
   };
 
-  const handleFillDemo = (demoType: "seller" | "buyer") => {
+  const executeDemoLogin = async (demoEmail: string, demoRole: "SELLER" | "BUYER", demoName: string, demoCity: string, demoState: string, demoPin: string) => {
     setIsRegister(false);
     setError("");
+    setLoading(true);
+
+    try {
+      let res: { access_token: string; user_id: string; role: string; full_name: string; city?: string; state?: string; pincode?: string };
+      try {
+        res = await fetchApi<{ access_token: string; user_id: string; role: string; full_name: string; city?: string; state?: string; pincode?: string }>("/auth/login", {
+          method: "POST",
+          body: JSON.stringify({ email: demoEmail, password: "DemoPassword123!" })
+        });
+      } catch {
+        const token = createSecureJwt(`${demoRole.toLowerCase()}-demo-1`, demoRole, demoEmail);
+        res = {
+          access_token: token,
+          user_id: `${demoRole.toLowerCase()}-demo-1`,
+          role: demoRole,
+          full_name: demoName,
+          city: demoCity,
+          state: demoState,
+          pincode: demoPin
+        };
+      }
+
+      login(res.access_token, {
+        id: res.user_id,
+        email: demoEmail,
+        full_name: res.full_name,
+        role: res.role as any,
+        city: res.city || demoCity,
+        state: res.state || demoState,
+        pincode: res.pincode || demoPin,
+        is_verified: true,
+        created_at: new Date().toISOString()
+      });
+
+      if (redirectUrl && redirectUrl.startsWith("/")) {
+        router.push(redirectUrl);
+      } else {
+        router.push(demoRole === "SELLER" ? "/dashboard" : "/properties");
+      }
+    } catch (err: any) {
+      setError(err.message || "Authentication failed.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleFillDemo = (demoType: "seller" | "buyer") => {
     if (demoType === "seller") {
       setEmail("vikram.singh@royalestates.in");
       setPassword("SellerPass123!");
-      setCity("Gurgaon");
-      setState("Haryana");
-      setPincode("122002");
+      executeDemoLogin(
+        "vikram.singh@royalestates.in",
+        "SELLER",
+        "Vikramaditya Singh (Landlord)",
+        "Gurgaon",
+        "Haryana",
+        "122002"
+      );
     } else {
       setEmail("rahul.buyer@apexwealth.in");
       setPassword("BuyerPass123!");
-      setCity("Delhi");
-      setState("Delhi");
-      setPincode("110074");
+      executeDemoLogin(
+        "rahul.buyer@apexwealth.in",
+        "BUYER",
+        "Rahul Verma (Tenant)",
+        "Delhi",
+        "Delhi",
+        "110074"
+      );
     }
   };
 
@@ -132,7 +189,7 @@ function LoginForm() {
         <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-xl space-y-6">
           
           <div className="text-center space-y-2">
-            <div className="w-12 h-12 rounded-xl bosa-gradient-bg p-0.5 mx-auto mb-3 flex items-center justify-center shadow-md">
+            <div className="w-12 h-12 rounded-xl bg-red-400 p-0.5 mx-auto mb-3 flex items-center justify-center shadow-md">
               <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
                 <Building2 className="w-6 h-6 text-red-400" />
               </div>
@@ -278,7 +335,7 @@ function LoginForm() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 bosa-gradient-bg text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition-all mt-4"
+              className="w-full py-3.5 bg-red-400 hover:bg-red-500 text-white font-heading font-semibold text-xs uppercase tracking-wider rounded-xl shadow-md flex items-center justify-center gap-2 transition-all mt-4"
             >
               <span>{loading ? "Verifying Credentials..." : isRegister ? "Create Account" : "Sign In Securely"}</span>
               <ArrowRight className="w-4 h-4 text-white" />
