@@ -56,28 +56,32 @@ export default function HomePage() {
       count: "50+ Listings",
       desc: "Furnished single & sharing AC rooms with daily meals, Wi-Fi & housekeeping.",
       image: "/images/bedroom.jpg",
-      type: "PG"
+      type: "PG",
+      href: "/pg",
     },
     {
       title: "Flats & Apartments",
       count: "85+ Listings",
       desc: "1, 2, 3 BHK high-rise and gated society apartments with modern lifestyle amenities.",
       image: "/images/estate.jpg",
-      type: "Flat"
+      type: "Flat",
+      href: "/flats",
     },
     {
       title: "Independent Houses",
       count: "40+ Listings",
       desc: "Private builder floors and spacious independent houses for comfortable family living.",
       image: "/images/bungalow.jpg",
-      type: "House"
+      type: "House",
+      href: "/houses",
     },
     {
       title: "Commercial Shops",
       count: "30+ Listings",
       desc: "High footfall retail shops, market showrooms & commercial boutique spaces for lease.",
       image: "/images/hills.jpg",
-      type: "Shop"
+      type: "Shop",
+      href: "/shops",
     },
   ];
 
@@ -138,7 +142,7 @@ export default function HomePage() {
           {categories.map((cat, idx) => (
             <Card3D key={idx} intensity={10} depth={20} className="h-80">
               <Link
-                href={`/properties?property_type=${encodeURIComponent(cat.type)}`}
+                href={cat.href}
                 className="bosa-card rounded-2xl overflow-hidden p-5 flex flex-col justify-between group h-full relative shadow-md hover:border-red-400 block"
               >
                 <Image

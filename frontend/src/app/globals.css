@@ -67,25 +67,19 @@ body {
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-/* Red Gradients */
+/* Solid Medium Red Accent (#E5484D) - Eye-friendly, Clean Solid Theme */
 .bosa-gradient-bg {
-  background: linear-gradient(135deg, #EB6868 0%, #E5484D 100%);
+  background-color: #E5484D;
 }
 
 .bosa-gold-gradient-bg {
-  background: linear-gradient(135deg, #FCA5A5 0%, #E5484D 100%);
+  background-color: #E5484D;
 }
 
 .bosa-gradient-text {
-  background: linear-gradient(135deg, #E5484D 0%, #EB6868 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #E5484D;
 }
 
 .gold-gradient-text {
-  background: linear-gradient(135deg, #E5484D 0%, #EB6868 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #E5484D;
 }

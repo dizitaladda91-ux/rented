@@ -95,8 +95,8 @@ function AdminLoginForm() {
       <Card3D intensity={6} depth={15}>
         <div className="bg-[#0F172A] border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl space-y-6 text-white relative overflow-hidden">
           
-          {/* Top Security Glow Line */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 via-red-400 to-rose-400" />
+          {/* Top Security Line */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-red-400" />
 
           {/* Security Badge */}
           <div className="text-center space-y-2">

@@ -56,10 +56,8 @@ export default function Navbar() {
             
             {/* Brand Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-red-400 to-red-500 p-0.5 shadow-md flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                <div className="w-full h-full bg-red-400 rounded-[10px] flex items-center justify-center">
-                  <Building2 className="w-6 h-6 text-white" />
-                </div>
+              <div className="w-11 h-11 rounded-xl bg-red-400 shadow-md flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                <Building2 className="w-6 h-6 text-white" />
               </div>
               <div>
                 <span className="font-heading text-2xl font-extrabold tracking-tight text-slate-900 block leading-none">
@@ -81,19 +79,19 @@ export default function Navbar() {
                 <span>All Rentals</span>
               </Link>
 
-              <Link href="/properties?property_type=PG" className="text-slate-900 hover:text-red-400 transition-colors">
+              <Link href="/pg" className="text-slate-900 hover:text-red-400 transition-colors">
                 PG / Hostels
               </Link>
 
-              <Link href="/properties?property_type=Flat" className="text-slate-900 hover:text-red-400 transition-colors">
+              <Link href="/flats" className="text-slate-900 hover:text-red-400 transition-colors">
                 Flats
               </Link>
 
-              <Link href="/properties?property_type=House" className="text-slate-900 hover:text-red-400 transition-colors">
+              <Link href="/houses" className="text-slate-900 hover:text-red-400 transition-colors">
                 Houses
               </Link>
 
-              <Link href="/properties?property_type=Shop" className="text-slate-900 hover:text-red-400 transition-colors">
+              <Link href="/shops" className="text-slate-900 hover:text-red-400 transition-colors">
                 Shops
               </Link>
 
@@ -119,31 +117,40 @@ export default function Navbar() {
                     href={isAdmin ? "/admin" : "/dashboard"}
                     className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-900 hover:bg-slate-200 transition-all text-xs font-semibold"
                   >
-                    <UserIcon className="w-4 h-4 text-red-400" />
-                    <span>{user?.full_name?.split(" ")[0]} ({user?.role})</span>
+                    <UserIcon className="w-4 h-4 text-slate-700" />
+                    <span>{isAdmin ? "Platform (ADMIN)" : user?.full_name?.split(" ")[0] || "My Account"}</span>
                   </Link>
+
                   <button
                     onClick={logout}
-                    className="text-xs text-slate-500 hover:text-red-400 transition-colors font-medium"
+                    className="text-xs text-slate-500 hover:text-red-400 font-semibold transition-colors"
                   >
                     Sign Out
                   </button>
                 </div>
               ) : (
-                <Link
-                  href="/login"
-                  className="px-5 py-2.5 rounded-xl bg-slate-900 text-white font-heading font-semibold text-xs uppercase tracking-wider hover:bg-slate-800 transition-all"
-                >
-                  Sign In
-                </Link>
+                <div className="flex items-center space-x-3 font-sans">
+                  <Link
+                    href="/login"
+                    className="px-4 py-2 text-xs font-bold text-slate-800 hover:text-red-400 transition-colors"
+                  >
+                    Sign In
+                  </Link>
+                  <Link
+                    href="/login?mode=signup"
+                    className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-all shadow-sm"
+                  >
+                    Register
+                  </Link>
+                </div>
               )}
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Hamburger */}
             <div className="lg:hidden flex items-center">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-slate-700 hover:text-red-400"
+                className="p-2 text-slate-700 hover:text-slate-900"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -161,16 +168,16 @@ export default function Navbar() {
           <Link href="/properties" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
             All Rentals
           </Link>
-          <Link href="/properties?property_type=PG" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
+          <Link href="/pg" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
             PG / Hostels
           </Link>
-          <Link href="/properties?property_type=Flat" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
+          <Link href="/flats" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
             Flats & Apartments
           </Link>
-          <Link href="/properties?property_type=House" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
+          <Link href="/houses" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
             Independent Houses
           </Link>
-          <Link href="/properties?property_type=Shop" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
+          <Link href="/shops" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">
             Commercial Shops
           </Link>
           <Link href="/favorites" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-800 font-medium">

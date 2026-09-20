@@ -142,8 +142,8 @@ export default function HeroBosa() {
 
       {/* 3D Animated Floating Property Search Dock */}
       <div className="relative z-40 max-w-6xl mx-auto px-4 w-full mt-10">
-        <div className="relative rounded-3xl p-1.5 bg-gradient-to-b from-white via-white/95 to-red-400/30 shadow-[0_30px_70px_-15px_rgba(15,23,42,0.35),0_10px_25px_-5px_rgba(248,113,113,0.2)] hover:shadow-[0_35px_80px_-10px_rgba(248,113,113,0.25)] hover:-translate-y-1 transition-all duration-300 border border-white/90">
-          <div className="bg-white p-5 sm:p-7 rounded-[22px] border border-slate-100 shadow-inner">
+        <div className="relative rounded-3xl bg-white shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-slate-200">
+          <div className="p-5 sm:p-7 rounded-3xl">
             
             {/* Top Meta Info Bar */}
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">

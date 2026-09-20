@@ -215,24 +215,24 @@ function SearchResultsContent() {
         
         {/* BUYER PERSONALIZED LOCATION BANNER */}
         {user && user.city && (
-          <div className="bg-gradient-to-r from-red-300 via-red-400 to-rose-300 text-white p-5 rounded-3xl shadow-md border border-red-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+          <div className="bg-red-50 text-slate-900 p-5 rounded-3xl shadow-sm border border-red-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
             <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-red-400 flex items-center justify-center shrink-0 shadow-sm">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold uppercase tracking-widest text-red-50">
+                  <span className="text-xs font-bold uppercase tracking-widest text-red-500">
                     Showing Nearby Listings
                   </span>
-                  <span className="text-[10px] bg-white text-red-500 font-extrabold px-2 py-0.5 rounded-full uppercase">
+                  <span className="text-[10px] bg-red-400 text-white font-extrabold px-2 py-0.5 rounded-full uppercase">
                     Your Profile City
                   </span>
                 </div>
-                <h3 className="font-heading text-lg font-black tracking-wide mt-0.5">
+                <h3 className="font-heading text-lg font-black tracking-wide mt-0.5 text-slate-900">
                   Rentals in {user.city} {user.pincode ? `(${user.pincode})` : ""}
                 </h3>
-                <p className="text-xs text-red-100 font-light">
+                <p className="text-xs text-slate-600 font-normal">
                   Direct verified owners, PGs, flats and shops matching your locality preference.
                 </p>
               </div>
@@ -246,8 +246,8 @@ function SearchResultsContent() {
                 }}
                 className={`px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider font-bold transition-all whitespace-nowrap shadow-sm ${
                   selectedCity.toLowerCase() === (user.city || "").toLowerCase()
-                    ? "bg-white text-red-500 shadow-lg font-extrabold"
-                    : "bg-white/20 text-white hover:bg-white/30"
+                    ? "bg-red-400 text-white shadow-md font-extrabold"
+                    : "bg-white text-slate-800 border border-slate-200 hover:bg-slate-50"
                 }`}
               >
                 Focus On My City
@@ -258,7 +258,7 @@ function SearchResultsContent() {
                     setSelectedCity("");
                     setSelectedPincode("");
                   }}
-                  className="px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider font-bold bg-black/20 hover:bg-black/30 text-white transition-all whitespace-nowrap"
+                  className="px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider font-bold bg-slate-200 hover:bg-slate-300 text-slate-700 transition-all whitespace-nowrap"
                 >
                   View All India
                 </button>
@@ -661,7 +661,7 @@ function SearchResultsContent() {
               </p>
               <button
                 onClick={resetFilters}
-                className="px-6 py-2.5 rounded-xl bosa-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-md hover:opacity-95 transition-all"
+                className="px-6 py-2.5 rounded-xl bg-red-400 hover:bg-red-500 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all"
               >
                 Reset All Filters
               </button>

@@ -38,7 +38,7 @@ export default function FavoritesPage() {
             <span>Saved Rentals</span>
           </div>
           <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Saved <span className="bosa-gradient-text">Rental Properties</span>
+            Saved <span className="text-red-400">Rental Properties</span>
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto font-normal">
             Your shortlisted collection of verified PG, flats, independent houses, and commercial shops.

@@ -56,7 +56,7 @@ export default function AdminPage() {
               <span>Platform Governance & Rental Moderation</span>
             </div>
             <h1 className="font-heading text-3xl font-extrabold text-slate-900">
-              Admin <span className="bosa-gradient-text">Verification Portal</span>
+              Admin <span className="text-red-400">Verification Portal</span>
             </h1>
           </div>
         </div>
