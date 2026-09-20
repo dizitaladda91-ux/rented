@@ -88,8 +88,3 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.bosa-glas-dark{
-  background: linear-gradient(135deg,#0F172A 0%,#1E293B 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}

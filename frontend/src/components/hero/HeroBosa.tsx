@@ -108,7 +108,7 @@ export default function HeroBosa() {
         </div>
 
         <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight">
-          Find & Rent <span className="boss-glas-dark">PG, Flat, House & Shop</span>
+          Find & Rent <span className="gold-gradient-text">PG, Flat, House & Shop</span>
         </h1>
 
         <p className="font-sans text-base sm:text-xl text-slate-200 max-w-3xl mx-auto font-light leading-relaxed mt-4">
