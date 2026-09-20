@@ -5,9 +5,9 @@
 @tailwind utilities;
 
 :root {
-  --bosa-red: #FCA5A5;          /* Soft Pastel Light Red */
-  --bosa-red-hover: #F87171;    /* Gentle Coral Red */
-  --bosa-red-light: #FFF5F5;    /* Soft Red-White tint */
+  --bosa-red: #E5484D;          /* Balanced Medium Red (calm, never piercing) */
+  --bosa-red-hover: #D9383E;    /* Richer Medium Red Hover */
+  --bosa-red-light: #FEF2F2;    /* Crisp Red-White tint */
   --bosa-dark: #0F172A;         /* Rich Slate Header */
   --bosa-light: #FFFFFF;        /* Clean White Background */
   --bosa-surface: #F8FAFC;      /* Light Subtle Surface */
@@ -32,11 +32,11 @@ body {
   background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #FCA5A5;
+  background: #E5484D;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #F87171;
+  background: #D9383E;
 }
 
 /* Rented Card with Soft Shadow & Red Hover */
@@ -47,8 +47,8 @@ body {
 }
 
 .bosa-card:hover {
-  border-color: #FCA5A5;
-  box-shadow: 0 15px 30px -10px rgba(252, 165, 165, 0.25), 0 0 15px rgba(252, 165, 165, 0.12);
+  border-color: #E5484D;
+  box-shadow: 0 15px 30px -10px rgba(229, 72, 77, 0.2), 0 0 15px rgba(229, 72, 77, 0.1);
   transform: translateY(-4px);
 }
 
@@ -67,24 +67,25 @@ body {
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-/* Red & Crimson Gradients */
+/* Red Gradients */
 .bosa-gradient-bg {
-  background: linear-gradient(135deg, #FCA5A5 0%, #F87171 100%);
+  background: linear-gradient(135deg, #EB6868 0%, #E5484D 100%);
 }
 
 .bosa-gold-gradient-bg {
-  background: linear-gradient(135deg, #FED7D7 0%, #FCA5A5 100%);
+  background: linear-gradient(135deg, #FCA5A5 0%, #E5484D 100%);
 }
 
 .bosa-gradient-text {
-  background: linear-gradient(135deg, #F87171 0%, #FCA5A5 100%);
+  background: linear-gradient(135deg, #E5484D 0%, #EB6868 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gold-gradient-text {
-  background: linear-gradient(135deg, #F87171 0%, #FCA5A5 100%);
+  background: linear-gradient(135deg, #E5484D 0%, #EB6868 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-

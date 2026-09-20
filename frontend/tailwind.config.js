@@ -9,12 +9,12 @@ module.exports = {
     extend: {
       colors: {
         rented: {
-          red: "#F87171",         // Soft coral-red
-          "red-hover": "#EF4444", // Gentle hover red
-          "red-light": "#FFF5F5", // Crisp light red-white tint
-          "red-border": "#FECACA", // Light red border
-          "red-soft": "#FED7D7",  // Delicate pastel red
-          "red-dark": "#F87171",  // Light accent
+          red: "#E5484D",         // Balanced Medium Red (soothing, never piercing)
+          "red-hover": "#D9383E", // Richer hover red
+          "red-light": "#FEF2F2", // Crisp light red-white tint
+          "red-border": "#FECACA", // Gentle light red border
+          "red-soft": "#FCA5A5",  // Soft red tint
+          "red-dark": "#C62A2F",  // Deep accent
           white: "#FFFFFF",
           surface: "#F8FAFC",
           card: "#FFFFFF",
@@ -22,27 +22,27 @@ module.exports = {
           muted: "#64748B",
         },
         red: {
-          50: "#FFF5F5",
+          50: "#FEF2F2",
           100: "#FEE2E2",
           200: "#FECACA",
-          300: "#FED7D7",
-          400: "#FCA5A5",         // Soft light pastel red for all red-400 elements
-          500: "#F87171",         // Soft coral red on hover/accents
-          600: "#EF4444",         // Gentle accent
-          700: "#F87171",
-          800: "#EF4444",
-          900: "#991B1B",
-          950: "#450A0A",
+          300: "#FCA5A5",
+          400: "#E5484D",         // Balanced Medium Red for buttons, accents, highlights
+          500: "#D9383E",         // Hover & focus medium red
+          600: "#C62A2F",         // Deep accent red
+          700: "#B02026",
+          800: "#8C181D",
+          900: "#601216",
+          950: "#38080A",
         },
         luxury: {
           dark: "#0F172A",
-          emerald: "#FCA5A5",     // Light soft red compatibility
-          accent: "#FED7D7",      // Light rose-red accent
-          "accent-hover": "#F87171",
-          bronze: "#EF4444",
+          emerald: "#E5484D",     // Medium red compatibility
+          accent: "#FCA5A5",
+          "accent-hover": "#D9383E",
+          bronze: "#C62A2F",
           cream: "#FFFFFF",
           card: "#FFFFFF",
-          border: "rgba(252, 165, 165, 0.2)",
+          border: "rgba(229, 72, 77, 0.15)",
           muted: "#64748B",
         }
       },
@@ -52,14 +52,14 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "red-gradient": "linear-gradient(135deg, #FED7D7 0%, #FCA5A5 50%, #F87171 100%)",
-        "gold-gradient": "linear-gradient(135deg, #FED7D7 0%, #FCA5A5 100%)",
+        "red-gradient": "linear-gradient(135deg, #FCA5A5 0%, #E5484D 50%, #D9383E 100%)",
+        "gold-gradient": "linear-gradient(135deg, #EB6868 0%, #E5484D 100%)",
         "dark-emerald": "linear-gradient(180deg, #1E293B 0%, #0F172A 100%)",
       },
       boxShadow: {
         'luxury': '0 20px 40px -15px rgba(0, 0, 0, 0.15)',
-        'red-glow': '0 0 25px rgba(252, 165, 165, 0.3)',
-        'gold-glow': '0 0 25px rgba(252, 165, 165, 0.3)',
+        'red-glow': '0 0 25px rgba(229, 72, 77, 0.25)',
+        'gold-glow': '0 0 25px rgba(229, 72, 77, 0.25)',
       }
     },
   },
