@@ -102,13 +102,13 @@ export default function HeroBosa() {
       {/* Hero Central Headline */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
         
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-red-300/40 text-xs font-semibold text-red-200 uppercase tracking-widest mb-6 backdrop-blur-md shadow-sm">
-          <Sparkles className="w-3.5 h-3.5 text-red-300" />
-          <span>India’s Verified Rental Marketplace</span>
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/90 border border-slate-700 text-xs font-bold text-white uppercase tracking-widest mb-6 backdrop-blur-md shadow-xl">
+          <Sparkles className="w-3.5 h-3.5 text-red-400" />
+          <span className="text-white font-bold">India’s Verified Rental Marketplace</span>
         </div>
 
         <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight">
-          Find & Rent <span className="gold-gradient-text">PG, Flat, House & Shop</span>
+          Find & Rent <span className="text-slate-950 font-black drop-shadow-[0_2px_14px_rgba(255,255,255,0.9)]">PG, Flat, House & Shop</span>
         </h1>
 
         <p className="font-sans text-base sm:text-xl text-slate-200 max-w-3xl mx-auto font-light leading-relaxed mt-4">
